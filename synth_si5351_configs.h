@@ -20,6 +20,13 @@
  * CLK 0 Configurations *
  ************************/
 
+//*****************************************************************************
+//
+//! \addtogroup synth_si4351
+//! @{
+//
+//*****************************************************************************
+
 // Clk0:  20MHz, disable State: High Z, Drive Strength: 11 (higest) Initial Phase offset: 0ns
 // Clk1: 160MHz, disable State: High Z, Drive Strength: 11 (higest) Initial Phase offset: 0ns (disabled)
 // Clk2: 160MHz, disable State: High Z, Drive Strength: 11 (higest) Initial Phase offset: 0ns (disabled)
@@ -167,3 +174,11 @@ uint8_t synth_config_clk0and2_20MHz[101] = {
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00};
+
+//*****************************************************************************
+//
+// Close the Doxygen group.
+//! @}
+//
+//*****************************************************************************
+

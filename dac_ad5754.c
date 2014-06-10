@@ -34,7 +34,7 @@
 
 //*****************************************************************************
 //
-//! \defgroup DAC_ad5754 ADC
+//! \defgroup DAC_ad5754 DAC
 //! \brief Drivers for the ADI ad5754 DAC.
 //! Interfaces the TI tiva C Launchpad with the ADI dac5754 digital to analog
 //! converter.
@@ -784,6 +784,124 @@ void DAC_uDMAsw_ISR(void) {
 	 DAC_updateDataDig(dacAddress >> 8, data_EH);
 	 DAC_updateDataDig(dacAddress, data_AD);
  }
+
+#ifdef DACd_UDMA_MODE
+
+ /**
+  * Initializes the DAC with the SSI0 uDMA enabled
+  *  Sets the output voltage range, turns on the selected DACs and sets the control
+  *  settings.
+  *  NOTE: Make sure DAC_WRITE_DELAY is defined properly
+  *
+  *  Sets all DAC voltage output ranges to -5v to +5v
+  *  turns on DAC output A and B
+  *  Turns on thermal shutdown, output current clamp, and turns off SDO
+  **/
+  void DACd_initDACuDMA(uint32_t rangeValue, uint32_t pwrSettingsValue, uint32_t SysClkFreq) {
+	 DACd_initSSIuDMA(SysClkFreq);
+ 	 DAC_initCtlLDAC();
+	 DAC_initCtlCLR();
+
+	 DACd_setSettingsCtl(DAC_CTL_TSD | DAC_CTL_TSD_EH | DAC_CTL_CLAMP | DAC_CTL_CLAMP_EH);
+ 	 MAP_SysCtlDelay(4000);
+ 	 DACd_setRange(DAC_ADDR_ALL_AH, rangeValue);
+ 	 MAP_SysCtlDelay(4000);
+ 	 DACd_setPowerCtl(pwrSettingsValue);
+ 	 MAP_SysCtlDelay(4000);
+  }
+
+/**
+ * initializes SSI0 for use with the DAC.  Also enables the SSI0 uDMA.
+ **/
+ void DACd_initSSIuDMA(uint32_t SysClkFreq) {
+ 	uint32_t trashBin[1] = {0};
+
+ 	// Enable Peripherals
+ 	MAP_SysCtlPeripheralEnable(DAC_SSI_PERIPH);
+ 	MAP_SysCtlPeripheralEnable(DAC_SSI_GPIO_PERIPH);
+
+ 	//Initialize the SSI0 TX uDMA
+ 	//SSIDMAEnable(DAC_SSI_BASE, SSI_DMA_TX);
+ 	// Set the pin muxing to SSI0 on port A
+ 	MAP_GPIOPinConfigure(DAC_SSI_CLK_PIN_CONFIG);
+ 	MAP_GPIOPinConfigure(DAC_SSI_FSS_PIN_CONFIG);
+ 	MAP_GPIOPinConfigure(DAC_SSI_RX_PIN_CONFIG);
+ 	MAP_GPIOPinConfigure(DAC_SSI_TX_PIN_CONFIG);
+ 	MAP_GPIOPinTypeSSI(DAC_SSI_GPIO_BASE,DAC_SSI_TX_PIN|DAC_SSI_RX_PIN|DAC_SSI_FSS_PIN|DAC_SSI_CLK_PIN);
+
+ 	// SPI Mode1
+ 	//MAP_SSIConfigSetExpClk(DAC_SSI_BASE,SysCtlClockGet(),SSI_FRF_MOTO_MODE_1,
+ 	//					   SSI_MODE_MASTER, DAC_FREQ_SSI_DATA, 8);
+ 	MAP_SSIConfigSetExpClk(DAC_SSI_BASE,SysClkFreq,SSI_FRF_MOTO_MODE_1,
+ 	 					   SSI_MODE_MASTER, DAC_FREQ_SSI_DATA, 8);
+ 	MAP_SSIEnable(DAC_SSI_BASE); // Enable SSI
+ 	//SSIDMAEnable(DAC_SSI_BASE, SSI_DMA_TX); // Enable SSI Tx uDMA
+ 	// Clear RX FIFO
+ 	while (MAP_SSIDataGetNonBlocking(DAC_SSI_BASE, &trashBin[0])) {
+ 	     }
+ 	//MAP_IntEnable(INT_SSI0);
+ }
+
+/**
+ * setup of the uDMA to transfer 6 bytes of data using the auto mode.
+ *
+ * \note Be sure to enable the uDMA at the system level first
+ *
+ * \note The alternating global output buffers are named
+ *  DAC_g_bufferPRI and DAC_g_bufferALT
+ *
+ **/
+void DACd_inituDMAautoSSI(void) {
+	// Enable the uDMA controller error interrupt.  This interrupt will occur
+	// if there is a bus error during a transfer.
+	//MAP_IntEnable(INT_UDMAERR);
+
+    // Enable the uDMA controller.
+    //uDMAEnable();
+
+	//Setup channel selection
+	uDMAChannelAssign(DAC_SSI_TX_UDMA_CHANNEL_SELECTION);
+
+	// Place the uDMA channel attributes in a known state. These should already be disabled by default.
+	uDMAChannelAttributeDisable(DAC_SSI_TX_UDMA_CHANNEL ,
+	                            UDMA_ATTR_USEBURST | UDMA_ATTR_ALTSELECT |
+	                            (UDMA_ATTR_HIGH_PRIORITY |
+	                            UDMA_ATTR_REQMASK));
+	// Configure the control parameters for the SSI0 TX channel.  The channel
+	// will be used to update the dac output
+	uDMAChannelControlSet(DAC_SSI_TX_UDMA_CHANNEL  | UDMA_PRI_SELECT,
+						  UDMA_SIZE_8 | UDMA_SRC_INC_8 | UDMA_DST_INC_NONE |
+						  UDMA_ARB_8);
+
+	// Set up the transfer parameters for the SSI0 Tx channel.  This will
+	// configure the transfer buffers and the transfer size.
+	uDMAChannelTransferSet(DAC_SSI_TX_UDMA_CHANNEL  | UDMA_PRI_SELECT,
+						   UDMA_MODE_AUTO,
+						   (void *)DACd_g_bufferPRI, (void *)(DAC_SSI_BASE + SSI_O_DR),
+						   6);
+
+	// Give the DAC high priority for use of the uDMA
+	//uDMAChannelAttributeEnable(UDMA_CHANNEL_SSI0TX ,	UDMA_ATTR_HIGH_PRIORITY);
+	//uDMAChannelAttributeDisable(UDMA_CHANNEL_SSI0TX , UDMA_ATTR_ALL);
+	uDMAChannelAttributeEnable(DAC_SSI_TX_UDMA_CHANNEL , UDMA_ATTR_REQMASK);
+	// Now the software channel is primed to start a transfer.  The channel
+	// must be enabled.  For software based transfers, a request must be
+	// issued.  After this, the uDMA memory transfer begins.
+	uDMAChannelEnable(DAC_SSI_TX_UDMA_CHANNEL);
+	IntEnable(INT_UDMA); // Enables the Software channel interrupt that triggers
+						   // upon completion of a software transfer.
+	// uDMAChannelRequest(UDMA_CHANNEL_SSI0RX);
+}
+
+void DAC_uDMAsw_ISR(void) {
+	//DAC_loadDACsPin();
+	//DAC_loadDACsPin();
+	//uDMADisable();
+	SSIDMADisable(DAC_SSI_BASE, SSI_DMA_TX); // Enable SSI Tx uDMA
+	uDMAChannelDisable(DAC_SSI_TX_UDMA_CHANNEL);
+}
+
+#endif
 
  //*****************************************************************************
 //

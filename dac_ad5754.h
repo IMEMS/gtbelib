@@ -161,9 +161,20 @@ extern "C"
 	extern volatile uint8_t DAC_g_bufferSel;
 #endif
 
+// The uDMA is used to transfer the DAC output data from memory to SSI0.
+// These variables are declared but must also be defined in the main program file.
+// (without extern)
+#ifdef DACd_UDMA_MODE
+	extern volatile uint8_t DACd_g_bufferPRI[6];
+	extern volatile uint8_t DACd_g_bufferALT[6];
+	extern volatile uint8_t DACd_g_bufferSel;
+#endif
+
+
 /******************
  * DAC Parameters *
  ******************/
+
 // DAC Addresses
 #define DAC_ADDR_A        0x00000000 // DAC A Address
 #define DAC_ADDR_B        0x00000001 // DAC B Address
@@ -301,6 +312,12 @@ extern void DACd_updateDataVolt(uint32_t dacAddress, uint32_t rangeValue,
 		 	 	 	 	 	 	_Bool bin_AD, _Bool bin_EH,
 		 	 	 	 	 	 	float voltage_AD, float voltage_EH);
 extern void DACd_updateDataDig(uint32_t dacAddress, uint32_t data_AD, uint32_t data_EH);
+#ifdef DACd_UDMA_MODE
+void DACd_initDACuDMA(uint32_t rangeValue, uint32_t pwrSettingsValue, uint32_t SysClkFreq);
+void DACd_initSSIuDMA(uint32_t SysClkFreq);
+void DACd_inituDMAautoSSI(void);
+void DAC_uDMAsw_ISR(void);
+#endif
 // DAC output timing timer
 // void initTimer(void);
 
