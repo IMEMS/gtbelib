@@ -1,6 +1,6 @@
 /********************************************************************************
  *
- * dac_ad5754.c - drivers for the ADI ad5754 DAC.
+ * dac_ad5754.c - Drivers for the ADI ad5754 DAC.
  *  Interfaces the TI tiva C Launchpad with the ADI dac5754 digital to analog
  *  converter
  *
@@ -32,6 +32,27 @@
  *
  ********************************************************************************/
 
+//*****************************************************************************
+//
+//! \defgroup DAC_ad5754 ADC
+//! \brief Drivers for the ADI ad5754 DAC.
+//! Interfaces the TI tiva C Launchpad with the ADI dac5754 digital to analog
+//! converter.
+//! Files:
+//!  dac_ad5754.c
+//!  dac_ad5754.h
+//!
+//! \author Curtis Mayberry
+//
+//*****************************************************************************
+ 
+//*****************************************************************************
+//
+//! \addtogroup DAC_ad5754
+//! @{
+//
+//*****************************************************************************
+ 
 #include <stdbool.h>
 #include <stdint.h>
 #include "inc/hw_memmap.h"
@@ -745,16 +766,29 @@ void DAC_uDMAsw_ISR(void) {
 /**
  * Updates the data in the DAC's data register
  *  The data must be loaded before it will be output
+ 
  *  \note A delay must be placed between consecutive dac write commands.
  *        This must be long enough to ensure that ~sync goes high between writes
  *
  *  \param dacAddress Selected DAC(s)
  *   Must be the bitwise or of a stand alone operation parameter
  *   and a daisy chain operation parameter
- *  \param data Digital output to be placed in the data register of the selected
- *  DAC(s)
+ *
+ *  \param data_AD Digital output to be placed in the data register of the DACs 
+ *   A through D
+ *
+ *  \param data_EH Digital output to be placed in the data register of the DACs 
+ *   E through H (daisy-chained device)
  **/
  void DACd_updateDataDig(uint32_t dacAddress, uint32_t data_AD, uint32_t data_EH) {
 	 DAC_updateDataDig(dacAddress >> 8, data_EH);
 	 DAC_updateDataDig(dacAddress, data_AD);
  }
+
+ //*****************************************************************************
+//
+// Close the Doxygen group.
+//! @}
+//
+//*****************************************************************************
+ 

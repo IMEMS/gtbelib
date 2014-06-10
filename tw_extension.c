@@ -17,6 +17,28 @@
  *
  ******************************************************************************/
 
+//*****************************************************************************
+//
+//! \defgroup tivaware_extension Tivaware Extension
+//! \brief Extension for the Tivaware Driver Library for TI Tiva C MCUs
+//!  Used with the Georgia Tech Back End (GTBE)
+//!  GTBE-EK-TM4C123GXL
+//!  GTBE-EK-TM4C1294XL
+//!  Files:
+//!   tw_extension.c
+//!   tw_extension.h
+//!
+//! \author Curtis Mayberry
+//
+//*****************************************************************************
+ 
+//*****************************************************************************
+//
+//! \addtogroup tivaware_extension
+//! @{
+//
+//*****************************************************************************
+ 
 #include <stdbool.h>
 #include <stdint.h>
 #include "inc/hw_memmap.h"
@@ -83,7 +105,7 @@ _SSIBaseValid(uint32_t ui32Base)
  *  Sets up the flash interrupt in case the program attempts to access the
  *   protected flash portions.  Make sure the ISR is added to the NVIC table
  *
- *  \ Make sure the NVIC is not contained in the protected code memory
+ *  \note Make sure the NVIC is not contained in the protected code memory
  *
  *  \param codeStart - start location of flash memory that is to be reserved
  *  	it must land on a 2KB boundry
@@ -108,9 +130,10 @@ int32_t twe_initFlash(uint32_t codeStart, uint32_t codeReserveLength,
 
 /**
  * Erases the indicated flash memory
- *  \param dataStart - start location of flash memory that is to be erased
+ 
+ *  \param startAddress Start location of flash memory that is to be erased
  *  	it must land on a 1KB boundry
- *  \param dataEraseLength  - length of data to erase in flash memory
+ *  \param eraseLength Length of data to erase in flash memory
  *  	it must land on a 1KB boundry, set to 0x0 to skip erasure
  **/
 int32_t twe_eraseFlashRange(uint32_t startAddress, uint32_t eraseLength) {
@@ -131,10 +154,11 @@ int32_t twe_eraseFlashRange(uint32_t startAddress, uint32_t eraseLength) {
 
 /**
  * Protects the indicated flash memory
- *  \param codeStart - start location of flash memory that is to be reserved
+ *  \param startAddress Start location of flash memory that is to be reserved
  *  	it must land on a 2KB boundry
- *  \param protectLength - length of code to protect in flash memory
+ *  \param protectLength Length of code to protect in flash memory
  *  	it must land on a 2KB boundry, set to 0x0 to skip protection
+ *  \param eProtect Protection type
  **/
 int32_t twe_protectFlashRange(uint32_t startAddress, uint32_t protectLength, tFlashProtection eProtect) {
 	int32_t status = 0;
@@ -608,9 +632,11 @@ void twe_initQSSIuDMAtx(void) {
 /**
  * Verifies that a transmission from the master has completed successfully
  *
- * \param burst - set to true if burst mode was used for the transmission
+ * \param ui32base Base address of the I2C peripheral 
  *
- * \param receive - Set to true if a receive transmission is to be verified
+ * \param burst Set to true if burst mode was used for the transmission
+ *
+ * \param receive Set to true if a receive transmission is to be verified
  * Set to false if a send transmission is to be verified
  *
  * \note Waits until a transmission is complete and then checks that no errors have occurred
@@ -618,7 +644,7 @@ void twe_initQSSIuDMAtx(void) {
  * \note If an error occurs the I2C transmission is stopped, the error LED is lit and the
  * program enters an infinite loop to hold the state.
  **/
-void twe_I2CMasterVerify(uint32_t ui32Base, bool burst, bool receive) {
+void twe_I2CMasterVerify(uint32_t ui32base, bool burst, bool receive) {
 	while(I2CMasterBusy(ui32Base)) {} // Wait until the transfer is complete
 	//uint32_t errorStatus = I2CMasterErr(ui32Base);
 	if(I2CMasterErr(ui32Base) != I2C_MASTER_ERR_NONE) {
@@ -663,3 +689,10 @@ void twe_initTimer(uint32_t Period) {
 
 }
 */
+
+//*****************************************************************************
+//
+// Close the Doxygen group.
+//! @}
+//
+//*****************************************************************************

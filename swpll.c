@@ -18,6 +18,28 @@
  *
  ******************************************************************************/
 
+//*****************************************************************************
+//
+//! \defgroup swpll Software Defined PLL
+//! \brief drivers for a software defined phase locked loop
+//!  Used with the Georgia Tech Back End (GTBE)
+//!  GTBE-EK-TM4C123GXL
+//!  GTBE-EK-TM4C1294XL
+//!  Files:
+//!   dac_ad5754.c
+//!   dac_ad5754.h
+//!
+//! \author Curtis Mayberry
+//
+//*****************************************************************************
+ 
+//*****************************************************************************
+//
+//! \addtogroup swpll
+//! @{
+//
+//*****************************************************************************
+ 
 #include <stdint.h>
 
 // GTBE Lib
@@ -48,8 +70,9 @@ void initFIR(firInst* firFilt, float* filtCoeff) {
 /**
  * Applies an input to a running FIR filter, filt.  The input is added to a circular buffer
  *
- * \parameter filt - an initialized FIR filter
- * \parameter input - A new data point to add to the filter's data buffer
+ * \param filt - an initialized FIR filter
+ *
+ * \param input - A new data point to add to the filter's data buffer
  **/
 float FIRfilter(firInst* filt, float input) {
 	float acc = 0;
@@ -115,3 +138,10 @@ float FIRfilter(firInst* filt, float input) {
 			}
 			*/
 
+//*****************************************************************************
+//
+// Close the Doxygen group.
+//! @}
+//
+//*****************************************************************************
+			

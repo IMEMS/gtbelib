@@ -32,13 +32,14 @@ extern "C"
 
 /**
  * Data type for saving a float to flash memory
+ *  Allows a float to be read as if it were a unsigned integer
  **/
 typedef struct {
 	union {
-		float fn[1];
+		float fn[1];		
 		uint32_t uintn[1];
-	} data;
-	uint32_t address;
+	} data;					/**< float data to be stored*/
+	uint32_t address;		/**< data memory address*/
 } floatFlash;
 
 /*
@@ -192,7 +193,7 @@ extern void twe_initQSSIuDMArx(void);
 extern void twe_initQSSIuDMAtx(void);
 #endif
 // I2C
-extern void twe_I2CMasterVerify(uint32_t ui32Base, bool burst, bool receive);
+extern void twe_I2CMasterVerify(uint32_t ui32base, bool burst, bool receive);
 
 //*****************************************************************************
 //

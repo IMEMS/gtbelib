@@ -1,0 +1,230 @@
+\hypertarget{group___a_d_c__ads1278}{\section{A\+D\+C}
+\label{group___a_d_c__ads1278}\index{A\+D\+C@{A\+D\+C}}
+}
+
+
+Drivers for the T\+I ads1278 A\+D\+C Interfaces the T\+I tiva C Launchpad with the T\+I ads1278 analog to digital converter. Files\+: \hyperlink{adc__ads1278_8c_source}{adc\+\_\+ads1278.\+c} \hyperlink{adc__ads1278_8h_source}{adc\+\_\+ads1278.\+h}.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___a_d_c__ads1278_gad2a0b7a0dd7616e92163541c0e1f4706}{A\+D\+C\+\_\+init\+A\+D\+C} (uint32\+\_\+t Sys\+Clk\+Freq)
+\item 
+void \hyperlink{group___a_d_c__ads1278_gad4e9656930b83fb827a3745f50834e9e}{A\+D\+C\+\_\+init\+Controls} (void)
+\item 
+void \hyperlink{group___a_d_c__ads1278_ga55cb8eb204b6e8a9247581e543e76f27}{A\+D\+C\+\_\+init\+D\+R\+D\+Yint} (void)
+\item 
+void \hyperlink{group___a_d_c__ads1278_ga203a59c4b8d465f9f687bc6f171894c6}{A\+D\+C\+\_\+init\+D\+R\+D\+Y} (void)
+\item 
+void \hyperlink{group___a_d_c__ads1278_gacf5fb3dffc13dc4e09cfcaf806481cb2}{A\+D\+C\+\_\+init\+N\+S\+Y\+N\+C} (void)
+\item 
+void \hyperlink{group___a_d_c__ads1278_gad85d5fb4a0453db0838a5afb155b95d8}{A\+D\+C\+\_\+init\+S\+S\+I} (uint32\+\_\+t Sys\+Clk\+Freq)
+\item 
+void \hyperlink{group___a_d_c__ads1278_ga570498decf3fe93b69a783a1e36a2d6c}{A\+D\+C\+\_\+set\+Test\+Mode} (uint32\+\_\+t test\+Mode\+Value)
+\item 
+void \hyperlink{group___a_d_c__ads1278_ga14ab736d523bd900635d7cdd8ff5d3f1}{A\+D\+C\+\_\+set\+C\+L\+Kfreq} (uint32\+\_\+t clk\+Freq\+Value)
+\item 
+void \hyperlink{group___a_d_c__ads1278_ga8d6e34da06566ebf70db73c06d2298f6}{A\+D\+C\+\_\+set\+Mode} (uint32\+\_\+t mode\+Value)
+\item 
+void \hyperlink{group___a_d_c__ads1278_ga5e6f3f3b4fb89b095a1ad8b19efc75fc}{A\+D\+C\+\_\+set\+C\+L\+Kdiv} (uint32\+\_\+t C\+L\+Kdiv\+Value)
+\item 
+void \hyperlink{group___a_d_c__ads1278_ga02b9cca74e7c4baed09fabf829ec77d0}{A\+D\+C\+\_\+init\+Clk\+P\+W\+M} (uint32\+\_\+t sys\+Clk\+Freq\+Div)
+\item 
+void \hyperlink{group___a_d_c__ads1278_gaa70fe4a867adb257ec016636a8a00571}{A\+D\+C\+\_\+set\+Serial\+Format} (uint32\+\_\+t serial\+Format\+Value)
+\item 
+void \hyperlink{group___a_d_c__ads1278_gabb378e727898a1dcf2112fd3e981da75}{A\+D\+C\+\_\+init\+U\+D\+M\+Assi\+R\+X} (void)
+\item 
+void \hyperlink{group___a_d_c__ads1278_ga1fceeeedf591a23522a221d078a3e140}{A\+D\+C\+\_\+\+S\+S\+I\+R\+Xu\+D\+M\+A\+\_\+\+I\+S\+R} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Drivers for the T\+I ads1278 A\+D\+C Interfaces the T\+I tiva C Launchpad with the T\+I ads1278 analog to digital converter. Files\+: \hyperlink{adc__ads1278_8c_source}{adc\+\_\+ads1278.\+c} \hyperlink{adc__ads1278_8h_source}{adc\+\_\+ads1278.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Curtis Mayberry 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___a_d_c__ads1278_gad2a0b7a0dd7616e92163541c0e1f4706}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+init\+A\+D\+C@{A\+D\+C\+\_\+init\+A\+D\+C}}
+\index{A\+D\+C\+\_\+init\+A\+D\+C@{A\+D\+C\+\_\+init\+A\+D\+C}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+init\+A\+D\+C}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+init\+A\+D\+C (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{Sys\+Clk\+Freq}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_gad2a0b7a0dd7616e92163541c0e1f4706}
+Initializes the A\+D\+C
+
+Gives clk freq = 25 M\+Hz assuming a system clk freq = 50\+M\+Hz
+
+/param mode\+Value Sets the mode of the A\+D\+C values\+: A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+H\+I\+G\+H\+\_\+\+S\+P\+E\+E\+D, A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+H\+I\+G\+H\+\_\+\+R\+E\+S\+O\+L, A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+E\+R, A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+L\+O\+W\+\_\+\+S\+P\+E\+E\+D 
+
+Definition at line 80 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_ga02b9cca74e7c4baed09fabf829ec77d0}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+init\+Clk\+P\+W\+M@{A\+D\+C\+\_\+init\+Clk\+P\+W\+M}}
+\index{A\+D\+C\+\_\+init\+Clk\+P\+W\+M@{A\+D\+C\+\_\+init\+Clk\+P\+W\+M}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+init\+Clk\+P\+W\+M}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+init\+Clk\+P\+W\+M (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{sys\+Clk\+Freq\+Div}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_ga02b9cca74e7c4baed09fabf829ec77d0}
+Initializes the M1\+P\+W\+M5 to generate the clock for the A\+D\+C Utilizes P\+W\+M module 1 output 5 (P\+F1)
+
+Clock Setup Options $\ast$25\+M\+Hz -\/ 50 M\+Hz system clock, sys\+Clk\+Freq\+Div = A\+D\+C\+\_\+\+P\+W\+M\+\_\+\+D\+I\+V2 $\ast$26.67\+M\+Hz -\/ 80 M\+Hz system clock, sys\+Clk\+Freq\+Div = A\+D\+C\+\_\+\+P\+W\+M\+\_\+\+D\+I\+V3 $\ast$33.33\+M\+Hz -\/ 66.\+67 M\+Hz system clock, sys\+Clk\+Freq\+Div = A\+D\+C\+\_\+\+P\+W\+M\+\_\+\+D\+I\+V2 (Need 2.\+0v $<$ D\+V\+D\+D $<$ 2.\+2v) /param sys\+Clk\+Freq\+Div -\/ frequency divider of the P\+W\+M values\+: A\+D\+C\+\_\+\+P\+W\+M\+\_\+\+D\+I\+V2, A\+D\+C\+\_\+\+P\+W\+M\+\_\+\+D\+I\+V3 
+
+Definition at line 258 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_gad4e9656930b83fb827a3745f50834e9e}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+init\+Controls@{A\+D\+C\+\_\+init\+Controls}}
+\index{A\+D\+C\+\_\+init\+Controls@{A\+D\+C\+\_\+init\+Controls}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+init\+Controls}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+init\+Controls (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_gad4e9656930b83fb827a3745f50834e9e}
+Initializes the control signals of the A\+D\+C 
+
+Definition at line 93 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_ga203a59c4b8d465f9f687bc6f171894c6}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+init\+D\+R\+D\+Y@{A\+D\+C\+\_\+init\+D\+R\+D\+Y}}
+\index{A\+D\+C\+\_\+init\+D\+R\+D\+Y@{A\+D\+C\+\_\+init\+D\+R\+D\+Y}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+init\+D\+R\+D\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+init\+D\+R\+D\+Y (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_ga203a59c4b8d465f9f687bc6f171894c6}
+Initialize $\sim$\+D\+R\+D\+Y pin as an input 
+
+Definition at line 126 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_ga55cb8eb204b6e8a9247581e543e76f27}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+init\+D\+R\+D\+Yint@{A\+D\+C\+\_\+init\+D\+R\+D\+Yint}}
+\index{A\+D\+C\+\_\+init\+D\+R\+D\+Yint@{A\+D\+C\+\_\+init\+D\+R\+D\+Yint}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+init\+D\+R\+D\+Yint}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+init\+D\+R\+D\+Yint (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_ga55cb8eb204b6e8a9247581e543e76f27}
+Initialize $\sim$\+D\+R\+D\+Y pin as an input interrupt to trigger the read. \begin{DoxyNote}{Note}
+need to add the interrupt prototype to the N\+V\+I\+C 
+\end{DoxyNote}
+
+
+Definition at line 109 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_gacf5fb3dffc13dc4e09cfcaf806481cb2}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+init\+N\+S\+Y\+N\+C@{A\+D\+C\+\_\+init\+N\+S\+Y\+N\+C}}
+\index{A\+D\+C\+\_\+init\+N\+S\+Y\+N\+C@{A\+D\+C\+\_\+init\+N\+S\+Y\+N\+C}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+init\+N\+S\+Y\+N\+C}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+init\+N\+S\+Y\+N\+C (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_gacf5fb3dffc13dc4e09cfcaf806481cb2}
+Initializes $\sim$\+S\+Y\+N\+C 
+
+Definition at line 135 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_gad85d5fb4a0453db0838a5afb155b95d8}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+init\+S\+S\+I@{A\+D\+C\+\_\+init\+S\+S\+I}}
+\index{A\+D\+C\+\_\+init\+S\+S\+I@{A\+D\+C\+\_\+init\+S\+S\+I}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+init\+S\+S\+I}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+init\+S\+S\+I (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{Sys\+Clk\+Freq}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_gad85d5fb4a0453db0838a5afb155b95d8}
+initializes S\+S\+I for use with the A\+D\+C 
+
+Definition at line 144 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_gabb378e727898a1dcf2112fd3e981da75}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+init\+U\+D\+M\+Assi\+R\+X@{A\+D\+C\+\_\+init\+U\+D\+M\+Assi\+R\+X}}
+\index{A\+D\+C\+\_\+init\+U\+D\+M\+Assi\+R\+X@{A\+D\+C\+\_\+init\+U\+D\+M\+Assi\+R\+X}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+init\+U\+D\+M\+Assi\+R\+X}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+init\+U\+D\+M\+Assi\+R\+X (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_gabb378e727898a1dcf2112fd3e981da75}
+Initializes the S\+S\+I R\+X u\+D\+M\+A to transfer 3 bytes from the fifo to the data buffer 
+
+Definition at line 309 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_ga5e6f3f3b4fb89b095a1ad8b19efc75fc}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+set\+C\+L\+Kdiv@{A\+D\+C\+\_\+set\+C\+L\+Kdiv}}
+\index{A\+D\+C\+\_\+set\+C\+L\+Kdiv@{A\+D\+C\+\_\+set\+C\+L\+Kdiv}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+set\+C\+L\+Kdiv}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+set\+C\+L\+Kdiv (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{C\+L\+Kdiv\+Value}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_ga5e6f3f3b4fb89b095a1ad8b19efc75fc}
+Sets the clock divider setting of the A\+D\+C
+
+/param clk\+Div\+Value Sets the clock divider setting values\+: A\+D\+C\+\_\+\+C\+L\+K\+D\+I\+V\+\_\+\+H\+I\+G\+H\+F, A\+D\+C\+\_\+\+C\+L\+K\+D\+I\+V\+\_\+\+L\+O\+W\+F 
+
+Definition at line 242 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_ga14ab736d523bd900635d7cdd8ff5d3f1}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+set\+C\+L\+Kfreq@{A\+D\+C\+\_\+set\+C\+L\+Kfreq}}
+\index{A\+D\+C\+\_\+set\+C\+L\+Kfreq@{A\+D\+C\+\_\+set\+C\+L\+Kfreq}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+set\+C\+L\+Kfreq}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+set\+C\+L\+Kfreq (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{clk\+Freq\+Value}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_ga14ab736d523bd900635d7cdd8ff5d3f1}
+Sets the clock divider setting of the A\+D\+C
+
+/param clk\+Div\+Value Sets the clock divider setting values\+: A\+D\+C\+\_\+\+C\+L\+K\+D\+I\+V\+\_\+\+H\+I\+G\+H\+F, A\+D\+C\+\_\+\+C\+L\+K\+D\+I\+V\+\_\+\+L\+O\+W\+F 
+
+Definition at line 186 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_ga8d6e34da06566ebf70db73c06d2298f6}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+set\+Mode@{A\+D\+C\+\_\+set\+Mode}}
+\index{A\+D\+C\+\_\+set\+Mode@{A\+D\+C\+\_\+set\+Mode}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+set\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+set\+Mode (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{mode\+Value}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_ga8d6e34da06566ebf70db73c06d2298f6}
+Sets the mode of the A\+D\+C \begin{DoxyVerb}    Mode           | MAX Fdata |
+\end{DoxyVerb}
+ 
+
+ A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+H\+I\+G\+H\+\_\+\+S\+P\+E\+E\+D $\vert$ 144,531 $\vert$ A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+H\+I\+G\+H\+\_\+\+R\+E\+S\+O\+L $\vert$ 52,734 $\vert$ A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+E\+R $\vert$ 52,734 $\vert$ A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+L\+O\+W\+\_\+\+S\+P\+E\+E\+D $\vert$ 10,547 $\vert$
+
+/param mode\+Value Sets the mode of the A\+D\+C values\+: A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+H\+I\+G\+H\+\_\+\+S\+P\+E\+E\+D, A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+H\+I\+G\+H\+\_\+\+R\+E\+S\+O\+L, A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+E\+R, A\+D\+C\+\_\+\+M\+O\+D\+E\+\_\+\+L\+O\+W\+\_\+\+S\+P\+E\+E\+D 
+
+Definition at line 232 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_gaa70fe4a867adb257ec016636a8a00571}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+set\+Serial\+Format@{A\+D\+C\+\_\+set\+Serial\+Format}}
+\index{A\+D\+C\+\_\+set\+Serial\+Format@{A\+D\+C\+\_\+set\+Serial\+Format}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+set\+Serial\+Format}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+set\+Serial\+Format (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{serial\+Format\+Value}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_gaa70fe4a867adb257ec016636a8a00571}
+Sets the serial format for the A\+D\+C output Options\+: S\+P\+I or frame sync format Dynamic or fixed output positions Parallel or serial (T\+D\+M) output
+
+\begin{DoxyNote}{Note}
+Controls F\+O\+R\+M\+A\+T2, F\+O\+R\+M\+A\+T1, F\+O\+R\+M\+A\+T0 
+\end{DoxyNote}
+
+
+Definition at line 302 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_ga570498decf3fe93b69a783a1e36a2d6c}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+set\+Test\+Mode@{A\+D\+C\+\_\+set\+Test\+Mode}}
+\index{A\+D\+C\+\_\+set\+Test\+Mode@{A\+D\+C\+\_\+set\+Test\+Mode}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+set\+Test\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+set\+Test\+Mode (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{test\+Mode\+Value}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_ga570498decf3fe93b69a783a1e36a2d6c}
+Sets the test mode of the A\+D\+C that tests the digital I/\+O
+
+/param mode\+Value Sets the test mode of the A\+D\+C values\+: A\+D\+C\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+E\+\_\+\+N\+O\+R\+M\+A\+L, A\+D\+C\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+E\+\_\+\+T\+E\+S\+T 
+
+Definition at line 176 of file adc\+\_\+ads1278.\+c.
+
+\hypertarget{group___a_d_c__ads1278_ga1fceeeedf591a23522a221d078a3e140}{\index{A\+D\+C@{A\+D\+C}!A\+D\+C\+\_\+\+S\+S\+I\+R\+Xu\+D\+M\+A\+\_\+\+I\+S\+R@{A\+D\+C\+\_\+\+S\+S\+I\+R\+Xu\+D\+M\+A\+\_\+\+I\+S\+R}}
+\index{A\+D\+C\+\_\+\+S\+S\+I\+R\+Xu\+D\+M\+A\+\_\+\+I\+S\+R@{A\+D\+C\+\_\+\+S\+S\+I\+R\+Xu\+D\+M\+A\+\_\+\+I\+S\+R}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{A\+D\+C\+\_\+\+S\+S\+I\+R\+Xu\+D\+M\+A\+\_\+\+I\+S\+R}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+\+S\+S\+I\+R\+Xu\+D\+M\+A\+\_\+\+I\+S\+R (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___a_d_c__ads1278_ga1fceeeedf591a23522a221d078a3e140}
+u\+D\+M\+A interrupt service routine for receiving data from the A\+D\+C using the S\+S\+I u\+D\+M\+A R\+X channel 
+
+Definition at line 340 of file adc\+\_\+ads1278.\+c.
+

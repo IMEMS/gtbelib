@@ -71,9 +71,9 @@ extern "C"
  * Data type for saving incoming 24bit data
  **/
 typedef union {
-		int32_t intn[1];
-		uint32_t uintn[1];
-		} ints24;
+		int32_t intn[1];	/**< 24 bit integer stored as a signed int*/
+		uint32_t uintn[1];	/**< 24 bit integer stored as an unsigned int*/
+		} ints24; 			/**< 24 bit integer*/
 
 /*******************
  * Port Assignment *

@@ -17,6 +17,27 @@
  *
  ******************************************************************************/
 
+//*****************************************************************************
+//
+//! \defgroup ADC_ads1278 ADC
+//! \brief Drivers for the TI ads1278 ADC
+//! Interfaces the TI tiva C Launchpad with the TI ads1278 analog to digital
+//! converter.
+//! Files:
+//!  adc_ads1278.c
+//!  adc_ads1278.h
+//!
+//! \author Curtis Mayberry
+//
+//*****************************************************************************
+ 
+//*****************************************************************************
+//
+//! \addtogroup ADC_ads1278
+//! @{
+//
+//*****************************************************************************
+ 
 #include <stdbool.h>
 #include <stdint.h>
 #include "inc/hw_memmap.h"
@@ -313,6 +334,9 @@ void ADC_initUDMAssiRX(void) {
 	uDMAChannelEnable(ADC_SSI_RX_UDMA_CHANNEL);
 }
 
+/**
+ * uDMA interrupt service routine for receiving data from the ADC using the SSI uDMA RX channel
+ **/
 void ADC_SSIRXuDMA_ISR(void) {
 
 	// Speed optimized implementation using direct register access
@@ -341,3 +365,10 @@ void ADC_SSIRXuDMA_ISR(void) {
 	// GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, 0x00);
 	//HWREG(GPIO_PORTC_BASE + GPIO_O_DATA + (GPIO_PIN_7 <<2)) = 0x00; // Write low to GPIO PC7
 }
+
+//*****************************************************************************
+//
+// Close the Doxygen group.
+//! @}
+//
+//*****************************************************************************

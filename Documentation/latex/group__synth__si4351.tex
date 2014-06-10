@@ -1,0 +1,403 @@
+\hypertarget{group__synth__si4351}{\section{Frequency Synthesizer}
+\label{group__synth__si4351}\index{Frequency Synthesizer@{Frequency Synthesizer}}
+}
+
+
+Driver for the Silicon Labs si5351 Frequency synthesizer Interfaces the T\+I tiva C Launchpad with the Silicon Labs si5351 frequency synthesizer Files\+: synth\+\_\+si4351.\+c synth\+\_\+si4351.\+h.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__synth__si4351_gab6f548d82c6a4743a29ef36989e9f57b}{synth\+\_\+init} (bool synth\+E\+N, uint8\+\_\+t xtal\+\_\+cl, uint8\+\_\+t $\ast$reg\+Config, uint8\+\_\+t output\+En)
+\item 
+void \hyperlink{group__synth__si4351_ga8411f39546b1e0c34d940b2bc912b6d5}{synth\+\_\+init\+Config} (uint8\+\_\+t $\ast$reg\+Config, uint8\+\_\+t output\+En)
+\item 
+void \hyperlink{group__synth__si4351_ga7624250fdae39b3a90ca2d533181fac9}{synth\+\_\+init\+A\+D\+Creclk\+E\+N\+L} (bool b\+Enable)
+\item 
+void \hyperlink{group__synth__si4351_gaf4b54ebc93ba6ac72d83b07747e54874}{synth\+\_\+output\+Disable\+All} (void)
+\item 
+void \hyperlink{group__synth__si4351_ga5d4f7bca15364dd5928d9356698286d9}{synth\+\_\+output\+Enable} (uint8\+\_\+t output\+En)
+\item 
+void \hyperlink{group__synth__si4351_ga2f56d3941dc8c474d0940abe0bf945a1}{synth\+\_\+power\+Down\+Output\+Drivers} (void)
+\item 
+void \hyperlink{group__synth__si4351_gae90e773445ce3fd007180b7862fd787c}{synth\+\_\+set\+Interrupt\+Masks} (uint8\+\_\+t interrupt\+Masks)
+\item 
+uint32\+\_\+t \hyperlink{group__synth__si4351_ga4267214a41e82d3245f92d255da7cdb2}{synth\+\_\+read\+I\+N\+Tstatus} (void)
+\item 
+void \hyperlink{group__synth__si4351_ga9f5a1af96b53dbdd3499f140001c1fc6}{synth\+\_\+clear\+I\+N\+T} (uint8\+\_\+t interrupt\+C\+L\+R)
+\item 
+void \hyperlink{group__synth__si4351_ga725408d092dbec1348ddc5fb166bccdb}{synth\+\_\+write\+Reg\+Config} (uint8\+\_\+t $\ast$reg\+Config)
+\item 
+void \hyperlink{group__synth__si4351_ga568a2deeddefe0aeafcde58c56091692}{synth\+\_\+\+P\+L\+Lreset} (uint8\+\_\+t P\+L\+Lrst)
+\item 
+uint32\+\_\+t \hyperlink{group__synth__si4351_gafc95e97af42bace3422c63efb27ab82b}{synth\+\_\+read\+Device\+Status} (void)
+\item 
+void \hyperlink{group__synth__si4351_ga8dc9ecaf302b2406e9b65432d2d516db}{synth\+\_\+set\+X\+T\+A\+Lcapacitance} (uint8\+\_\+t xtal\+\_\+cl)
+\item 
+void \hyperlink{group__synth__si4351_gaf1b9beb50c98fe55e2a09b043c92dab8}{synth\+\_\+fanout\+Enable} (uint8\+\_\+t fanout\+E\+N)
+\item 
+void \hyperlink{group__synth__si4351_ga3cd3f237d03ce6a747ba15b6a31b547a}{synth\+\_\+init\+I2\+C} (bool fast)
+\item 
+void \hyperlink{group__synth__si4351_gadecf52795533ba14c1af542d392c5dd6}{synth\+\_\+write\+Reg\+I2\+C} (uint8\+\_\+t reg\+Num, uint8\+\_\+t reg\+Value)
+\item 
+void \hyperlink{group__synth__si4351_gabfeb5e662c0eda91dea397a2d634c7a1}{synth\+\_\+write\+Consecutive\+Regs\+I2\+C} (uint8\+\_\+t reg\+Num\+Start, uint8\+\_\+t reg\+C\+N\+T, uint8\+\_\+t $\ast$reg\+Values)
+\item 
+uint32\+\_\+t \hyperlink{group__synth__si4351_gadda050edbc9d89061265361cfd37a5df}{synth\+\_\+read\+Reg\+I2\+C} (uint8\+\_\+t reg\+Num)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Driver for the Silicon Labs si5351 Frequency synthesizer Interfaces the T\+I tiva C Launchpad with the Silicon Labs si5351 frequency synthesizer Files\+: synth\+\_\+si4351.\+c synth\+\_\+si4351.\+h. 
+
+\begin{DoxyAuthor}{Author}
+Curtis Mayberry 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__synth__si4351_ga9f5a1af96b53dbdd3499f140001c1fc6}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+clear\+I\+N\+T@{synth\+\_\+clear\+I\+N\+T}}
+\index{synth\+\_\+clear\+I\+N\+T@{synth\+\_\+clear\+I\+N\+T}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+clear\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+clear\+I\+N\+T (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{interrupt\+C\+L\+R}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_ga9f5a1af96b53dbdd3499f140001c1fc6}
+Clears the selected interrupts in the interrupt status register
+
+
+\begin{DoxyParams}{Parameters}
+{\em interrupt\+C\+L\+R} & -\/ interrupts to be cleared Logical or of one or more of the following values\+: S\+Y\+N\+T\+H\+\_\+\+I\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+S\+\_\+\+I\+N\+I\+T\+\_\+\+S\+T\+K\+Y S\+Y\+N\+T\+H\+\_\+\+I\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+L\+\_\+\+B\+\_\+\+S\+T\+K\+Y S\+Y\+N\+T\+H\+\_\+\+I\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+L\+\_\+\+A\+\_\+\+S\+T\+K\+Y S\+Y\+N\+T\+H\+\_\+\+I\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+S\+\_\+\+S\+T\+K\+Y\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Each interrupt is sticky and will remain high until it is cleared 
+\end{DoxyNote}
+
+
+Definition at line 216 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_gaf1b9beb50c98fe55e2a09b043c92dab8}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+fanout\+Enable@{synth\+\_\+fanout\+Enable}}
+\index{synth\+\_\+fanout\+Enable@{synth\+\_\+fanout\+Enable}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+fanout\+Enable}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+fanout\+Enable (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{fanout\+E\+N}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_gaf1b9beb50c98fe55e2a09b043c92dab8}
+Selects which fanouts to enable
+
+
+\begin{DoxyParams}{Parameters}
+{\em fanout\+E\+N} & selects which fanouts are enabled Logical or of one or more of the following values\+: S\+Y\+N\+T\+H\+\_\+\+F\+A\+N\+O\+U\+T\+\_\+\+E\+N\+\_\+\+C\+L\+K\+I\+N S\+Y\+N\+T\+H\+\_\+\+F\+A\+N\+O\+U\+T\+\_\+\+E\+N\+\_\+\+X\+O S\+Y\+N\+T\+H\+\_\+\+F\+A\+N\+O\+U\+T\+\_\+\+E\+N\+\_\+\+M\+S \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 279 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_gab6f548d82c6a4743a29ef36989e9f57b}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+init@{synth\+\_\+init}}
+\index{synth\+\_\+init@{synth\+\_\+init}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{bool}]{synth\+E\+N, }
+\item[{uint8\+\_\+t}]{xtal\+\_\+cl, }
+\item[{uint8\+\_\+t $\ast$}]{reg\+Config, }
+\item[{uint8\+\_\+t}]{output\+En}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_gab6f548d82c6a4743a29ef36989e9f57b}
+Initializes the synthesizer
+
+
+\begin{DoxyParams}{Parameters}
+{\em synth\+E\+N} & enables or disables the synthesizer outputs \\
+\hline
+{\em xtal\+\_\+cl} & Crystal input load capacitance selection \\
+\hline
+{\em reg\+Config} & register configuration generated by Clock\+Builder Desktop \\
+\hline
+{\em output\+En} & Outputs to be enabled \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_ga7624250fdae39b3a90ca2d533181fac9}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+init\+A\+D\+Creclk\+E\+N\+L@{synth\+\_\+init\+A\+D\+Creclk\+E\+N\+L}}
+\index{synth\+\_\+init\+A\+D\+Creclk\+E\+N\+L@{synth\+\_\+init\+A\+D\+Creclk\+E\+N\+L}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+init\+A\+D\+Creclk\+E\+N\+L}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+init\+A\+D\+Creclk\+E\+N\+L (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\+Enable}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_ga7624250fdae39b3a90ca2d533181fac9}
+Initializes $\sim$\+A\+D\+C\+\_\+\+R\+E\+C\+L\+K\+\_\+\+E\+N\+L to enable (false) or disable (true) the reclking of the A\+D\+C output to the synthesizer clock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Enable} & Active low enable signal for the D flip-\/flop that reclocks the A\+D\+C input when using the synthesizer to clock the A\+D\+C. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_ga8411f39546b1e0c34d940b2bc912b6d5}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+init\+Config@{synth\+\_\+init\+Config}}
+\index{synth\+\_\+init\+Config@{synth\+\_\+init\+Config}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+init\+Config}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+init\+Config (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{reg\+Config, }
+\item[{uint8\+\_\+t}]{output\+En}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_ga8411f39546b1e0c34d940b2bc912b6d5}
+Loads a configuration to the synth
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Config} & Predefined register configuration array Choose a config array from \hyperlink{synth__si5351__configs_8h_source}{synth\+\_\+si5351\+\_\+configs.\+h}\\
+\hline
+{\em output\+En} & Enables the synthesizer output\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The configuration is generated by Clock\+Builder Desktop
+
+Configuration 
+\end{DoxyNote}
+
+
+Definition at line 103 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_ga3cd3f237d03ce6a747ba15b6a31b547a}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+init\+I2\+C@{synth\+\_\+init\+I2\+C}}
+\index{synth\+\_\+init\+I2\+C@{synth\+\_\+init\+I2\+C}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+init\+I2\+C}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+init\+I2\+C (
+\begin{DoxyParamCaption}
+\item[{bool}]{fast}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_ga3cd3f237d03ce6a747ba15b6a31b547a}
+Initializes the synthesizer I2\+C serial interface in normal mode
+
+
+\begin{DoxyParams}{Parameters}
+{\em fast} & -\/ true sets the I2\+C interface to fast (400kbps) mode false sets the I2\+C interface to normal (100kbps) mode \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 293 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_gaf4b54ebc93ba6ac72d83b07747e54874}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+output\+Disable\+All@{synth\+\_\+output\+Disable\+All}}
+\index{synth\+\_\+output\+Disable\+All@{synth\+\_\+output\+Disable\+All}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+output\+Disable\+All}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+output\+Disable\+All (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_gaf4b54ebc93ba6ac72d83b07747e54874}
+Disables all clock outputs 
+
+Definition at line 145 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_ga5d4f7bca15364dd5928d9356698286d9}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+output\+Enable@{synth\+\_\+output\+Enable}}
+\index{synth\+\_\+output\+Enable@{synth\+\_\+output\+Enable}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+output\+Enable}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+output\+Enable (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{output\+En}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_ga5d4f7bca15364dd5928d9356698286d9}
+Enables the selected synthesizer outputs 
+\begin{DoxyParams}{Parameters}
+{\em output\+En} & -\/ clock outputs to be enabled. Those not included will be disabled Logical or of one or more of the following values\+: S\+Y\+N\+T\+H\+\_\+\+O\+U\+T\+\_\+\+E\+N\+\_\+\+C\+T\+L\+\_\+\+C\+L\+K7\+\_\+\+O\+E\+B S\+Y\+N\+T\+H\+\_\+\+O\+U\+T\+\_\+\+E\+N\+\_\+\+C\+T\+L\+\_\+\+C\+L\+K6\+\_\+\+O\+E\+B S\+Y\+N\+T\+H\+\_\+\+O\+U\+T\+\_\+\+E\+N\+\_\+\+C\+T\+L\+\_\+\+C\+L\+K5\+\_\+\+O\+E\+B S\+Y\+N\+T\+H\+\_\+\+O\+U\+T\+\_\+\+E\+N\+\_\+\+C\+T\+L\+\_\+\+C\+L\+K4\+\_\+\+O\+E\+B S\+Y\+N\+T\+H\+\_\+\+O\+U\+T\+\_\+\+E\+N\+\_\+\+C\+T\+L\+\_\+\+C\+L\+K3\+\_\+\+O\+E\+B S\+Y\+N\+T\+H\+\_\+\+O\+U\+T\+\_\+\+E\+N\+\_\+\+C\+T\+L\+\_\+\+C\+L\+K2\+\_\+\+O\+E\+B S\+Y\+N\+T\+H\+\_\+\+O\+U\+T\+\_\+\+E\+N\+\_\+\+C\+T\+L\+\_\+\+C\+L\+K1\+\_\+\+O\+E\+B S\+Y\+N\+T\+H\+\_\+\+O\+U\+T\+\_\+\+E\+N\+\_\+\+C\+T\+L\+\_\+\+C\+L\+K0\+\_\+\+O\+E\+B\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Si5351\+A (10-\/\+Pin M\+S\+O\+P) only has C\+L\+K 0-\/2 
+\end{DoxyNote}
+
+
+Definition at line 165 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_ga568a2deeddefe0aeafcde58c56091692}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+\+P\+L\+Lreset@{synth\+\_\+\+P\+L\+Lreset}}
+\index{synth\+\_\+\+P\+L\+Lreset@{synth\+\_\+\+P\+L\+Lreset}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+\+P\+L\+Lreset}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+\+P\+L\+Lreset (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{P\+L\+Lrst}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_ga568a2deeddefe0aeafcde58c56091692}
+Resets the selected P\+L\+L
+
+
+\begin{DoxyParams}{Parameters}
+{\em P\+L\+Lrst} & -\/ The P\+L\+L(s) to be reset Logical or of one or more of the following values\+: S\+Y\+N\+T\+H\+\_\+\+R\+S\+T\+\_\+\+P\+L\+L\+\_\+\+P\+L\+L\+B\+\_\+\+R\+S\+T S\+Y\+N\+T\+H\+\_\+\+R\+S\+T\+\_\+\+P\+L\+L\+\_\+\+P\+L\+L\+A\+\_\+\+R\+S\+T \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 243 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_ga2f56d3941dc8c474d0940abe0bf945a1}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+power\+Down\+Output\+Drivers@{synth\+\_\+power\+Down\+Output\+Drivers}}
+\index{synth\+\_\+power\+Down\+Output\+Drivers@{synth\+\_\+power\+Down\+Output\+Drivers}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+power\+Down\+Output\+Drivers}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+power\+Down\+Output\+Drivers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_ga2f56d3941dc8c474d0940abe0bf945a1}
+Powers down all output drivers 
+
+Definition at line 172 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_gafc95e97af42bace3422c63efb27ab82b}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+read\+Device\+Status@{synth\+\_\+read\+Device\+Status}}
+\index{synth\+\_\+read\+Device\+Status@{synth\+\_\+read\+Device\+Status}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+read\+Device\+Status}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t synth\+\_\+read\+Device\+Status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_gafc95e97af42bace3422c63efb27ab82b}
+Reads the device status register
+
+\begin{DoxyReturn}{Returns}
+device status (reg 0) 
+\end{DoxyReturn}
+
+
+Definition at line 252 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_ga4267214a41e82d3245f92d255da7cdb2}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+read\+I\+N\+Tstatus@{synth\+\_\+read\+I\+N\+Tstatus}}
+\index{synth\+\_\+read\+I\+N\+Tstatus@{synth\+\_\+read\+I\+N\+Tstatus}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+read\+I\+N\+Tstatus}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t synth\+\_\+read\+I\+N\+Tstatus (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_ga4267214a41e82d3245f92d255da7cdb2}
+Reads the interrupt status register
+
+\begin{DoxyReturn}{Returns}
+interrupt status
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Each interrupt is sticky and will remain high until it is cleared 
+\end{DoxyNote}
+
+
+Definition at line 200 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_gadda050edbc9d89061265361cfd37a5df}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+read\+Reg\+I2\+C@{synth\+\_\+read\+Reg\+I2\+C}}
+\index{synth\+\_\+read\+Reg\+I2\+C@{synth\+\_\+read\+Reg\+I2\+C}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+read\+Reg\+I2\+C}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t synth\+\_\+read\+Reg\+I2\+C (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{reg\+Num}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_gadda050edbc9d89061265361cfd37a5df}
+Reads from a single register
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Num} & -\/ Register number to be read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Register value read 
+\end{DoxyReturn}
+
+
+Definition at line 367 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_gae90e773445ce3fd007180b7862fd787c}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+set\+Interrupt\+Masks@{synth\+\_\+set\+Interrupt\+Masks}}
+\index{synth\+\_\+set\+Interrupt\+Masks@{synth\+\_\+set\+Interrupt\+Masks}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+set\+Interrupt\+Masks}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+set\+Interrupt\+Masks (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{interrupt\+Masks}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_gae90e773445ce3fd007180b7862fd787c}
+Sets interrupt masks
+
+
+\begin{DoxyParams}{Parameters}
+{\em interrupt\+Masks} & -\/ Indicates the interrupts that are to be masked Logical or of one or more of the following values\+: S\+Y\+N\+T\+H\+\_\+\+I\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+Y\+S\+\_\+\+I\+N\+I\+T\+\_\+\+M\+A\+S\+K S\+Y\+N\+T\+H\+\_\+\+I\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+A\+S\+K\+\_\+\+L\+O\+L\+\_\+\+B\+\_\+\+M\+A\+S\+K S\+Y\+N\+T\+H\+\_\+\+I\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+A\+S\+K\+\_\+\+L\+O\+L\+\_\+\+A\+\_\+\+M\+A\+S\+K S\+Y\+N\+T\+H\+\_\+\+I\+N\+T\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+A\+S\+K\+\_\+\+L\+O\+S\+\_\+\+M\+A\+S\+K\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+When an interrupt is masked it prevents the associated pin from going low when the interrupt is asserted 
+\end{DoxyNote}
+
+
+Definition at line 189 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_ga8dc9ecaf302b2406e9b65432d2d516db}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+set\+X\+T\+A\+Lcapacitance@{synth\+\_\+set\+X\+T\+A\+Lcapacitance}}
+\index{synth\+\_\+set\+X\+T\+A\+Lcapacitance@{synth\+\_\+set\+X\+T\+A\+Lcapacitance}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+set\+X\+T\+A\+Lcapacitance}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+set\+X\+T\+A\+Lcapacitance (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{xtal\+\_\+cl}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_ga8dc9ecaf302b2406e9b65432d2d516db}
+Sets the internal load capacitance of the crystal
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtal\+\_\+cl} & -\/ internal crystal load capacitance Adds the selected capacitance in parallel with both X\+T\+A\+L inputs Select one of the following values\+: S\+Y\+N\+T\+H\+\_\+\+X\+T\+A\+L\+\_\+\+C\+L\+\_\+6\+P\+F S\+Y\+N\+T\+H\+\_\+\+X\+T\+A\+L\+\_\+\+C\+L\+\_\+8\+P\+F S\+Y\+N\+T\+H\+\_\+\+X\+T\+A\+L\+\_\+\+C\+L\+\_\+10\+P\+F \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 266 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_gabfeb5e662c0eda91dea397a2d634c7a1}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+write\+Consecutive\+Regs\+I2\+C@{synth\+\_\+write\+Consecutive\+Regs\+I2\+C}}
+\index{synth\+\_\+write\+Consecutive\+Regs\+I2\+C@{synth\+\_\+write\+Consecutive\+Regs\+I2\+C}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+write\+Consecutive\+Regs\+I2\+C}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+write\+Consecutive\+Regs\+I2\+C (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{reg\+Num\+Start, }
+\item[{uint8\+\_\+t}]{reg\+C\+N\+T, }
+\item[{uint8\+\_\+t $\ast$}]{reg\+Values}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_gabfeb5e662c0eda91dea397a2d634c7a1}
+Writes to consecutive registers e.\+g. writes to register number 1,2,3,...
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Num\+Start} & -\/ Register number of the first register to be written. \\
+\hline
+{\em reg\+C\+N\+T} & -\/ The number of registers to write. Must have reg\+C\+N\+T $>$ 1 \\
+\hline
+{\em reg\+Values} & -\/ The register values that are to be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 335 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_ga725408d092dbec1348ddc5fb166bccdb}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+write\+Reg\+Config@{synth\+\_\+write\+Reg\+Config}}
+\index{synth\+\_\+write\+Reg\+Config@{synth\+\_\+write\+Reg\+Config}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+write\+Reg\+Config}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+write\+Reg\+Config (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{reg\+Config}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_ga725408d092dbec1348ddc5fb166bccdb}
+Writes the device configuration from the register map generated by Clock\+Builder Desktop
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Config} & -\/ configuration array of each register value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 226 of file synth\+\_\+si5351.\+c.
+
+\hypertarget{group__synth__si4351_gadecf52795533ba14c1af542d392c5dd6}{\index{Frequency Synthesizer@{Frequency Synthesizer}!synth\+\_\+write\+Reg\+I2\+C@{synth\+\_\+write\+Reg\+I2\+C}}
+\index{synth\+\_\+write\+Reg\+I2\+C@{synth\+\_\+write\+Reg\+I2\+C}!Frequency Synthesizer@{Frequency Synthesizer}}
+\subsubsection[{synth\+\_\+write\+Reg\+I2\+C}]{\setlength{\rightskip}{0pt plus 5cm}void synth\+\_\+write\+Reg\+I2\+C (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{reg\+Num, }
+\item[{uint8\+\_\+t}]{reg\+Value}
+\end{DoxyParamCaption}
+)}}\label{group__synth__si4351_gadecf52795533ba14c1af542d392c5dd6}
+Writes to a single register
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Num} & -\/ Register number to be written. \\
+\hline
+{\em reg\+Value} & -\/ The register value that is to be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 314 of file synth\+\_\+si5351.\+c.
+

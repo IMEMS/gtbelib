@@ -1,0 +1,285 @@
+\hypertarget{group__tivaware__extension}{\section{Tivaware Extension}
+\label{group__tivaware__extension}\index{Tivaware Extension@{Tivaware Extension}}
+}
+
+
+Extension for the Tivaware Driver Library for T\+I Tiva C M\+C\+Us Used with the Georgia Tech Back End (G\+T\+B\+E) G\+T\+B\+E-\/\+E\+K-\/\+T\+M4\+C123\+G\+X\+L G\+T\+B\+E-\/\+E\+K-\/\+T\+M4\+C1294\+X\+L Files\+: \hyperlink{tw__extension_8c_source}{tw\+\_\+extension.\+c} \hyperlink{tw__extension_8h_source}{tw\+\_\+extension.\+h}.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \hyperlink{group__tivaware__extension_gad27d12d3db25ab02cab49719679112ff}{twe\+\_\+init\+Flash} (uint32\+\_\+t code\+Start, uint32\+\_\+t code\+Reserve\+Length, uint32\+\_\+t data\+Start, uint32\+\_\+t data\+Erase\+Length)
+\item 
+int32\+\_\+t \hyperlink{group__tivaware__extension_ga3246fffb0d5a371dc0aca7cb2107d0a8}{twe\+\_\+erase\+Flash\+Range} (uint32\+\_\+t start\+Address, uint32\+\_\+t erase\+Length)
+\item 
+int32\+\_\+t \hyperlink{group__tivaware__extension_ga333907901d092e19fb725650ea54b7dc}{twe\+\_\+protect\+Flash\+Range} (uint32\+\_\+t start\+Address, uint32\+\_\+t protect\+Length, t\+Flash\+Protection e\+Protect)
+\item 
+void \hyperlink{group__tivaware__extension_ga18a2430e892002b301ba2372508f4248}{twe\+\_\+\+F\+L\+A\+S\+H\+\_\+bad\+Write\+I\+S\+R} (void)
+\item 
+void \hyperlink{group__tivaware__extension_ga47eb53d1a60d2924fe5e17bf3deb5152}{twe\+\_\+init\+F\+P\+U} (void)
+\item 
+void \hyperlink{group__tivaware__extension_ga861b56e4ce584719742baa7cb7e7bf40}{twe\+\_\+init\+F\+P\+Ulazy} (void)
+\item 
+void \hyperlink{group__tivaware__extension_ga6595fbba30948b76bb25dd132b927d24}{twe\+\_\+init\+U\+A\+R\+T} (uint32\+\_\+t Sys\+Clk\+Freq, uint32\+\_\+t baud\+Rate)
+\item 
+void \hyperlink{group__tivaware__extension_gac3d4a41e4cdbf8f1347467c6e6a4f4d9}{twe\+\_\+init\+System80\+M\+Hz} (void)
+\item 
+void \hyperlink{group__tivaware__extension_ga426827ec2d6bdc7dd6a7ddad17d4d919}{twe\+\_\+init\+U\+D\+M\+Acontroller} (void)
+\item 
+void \hyperlink{group__tivaware__extension_ga3f9ade243fdb9bb04c6b9c85d794cf65}{twe\+\_\+u\+D\+M\+A\+Error\+Handler} (void)
+\item 
+void \hyperlink{group__tivaware__extension_ga1862377c39a12ea09c946e22ee9e6853}{twe\+\_\+init\+Processing\+Indicator} (void)
+\item 
+void \hyperlink{group__tivaware__extension_gaa9b8fe7a3ca1dd437e493f91949168b0}{twe\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T} (uint32\+\_\+t ui32\+Base)
+\item 
+void \hyperlink{group__tivaware__extension_ga1a78bf5baccf03f8f27047a9738a49a7}{twe\+\_\+\+I2\+C\+Master\+Verify} (uint32\+\_\+t ui32base, bool burst, bool receive)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Extension for the Tivaware Driver Library for T\+I Tiva C M\+C\+Us Used with the Georgia Tech Back End (G\+T\+B\+E) G\+T\+B\+E-\/\+E\+K-\/\+T\+M4\+C123\+G\+X\+L G\+T\+B\+E-\/\+E\+K-\/\+T\+M4\+C1294\+X\+L Files\+: \hyperlink{tw__extension_8c_source}{tw\+\_\+extension.\+c} \hyperlink{tw__extension_8h_source}{tw\+\_\+extension.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Curtis Mayberry 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__tivaware__extension_ga3246fffb0d5a371dc0aca7cb2107d0a8}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+erase\+Flash\+Range@{twe\+\_\+erase\+Flash\+Range}}
+\index{twe\+\_\+erase\+Flash\+Range@{twe\+\_\+erase\+Flash\+Range}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+erase\+Flash\+Range}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t twe\+\_\+erase\+Flash\+Range (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{start\+Address, }
+\item[{uint32\+\_\+t}]{erase\+Length}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_ga3246fffb0d5a371dc0aca7cb2107d0a8}
+Erases the indicated flash memory
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Address} & Start location of flash memory that is to be erased it must land on a 1\+K\+B boundry \\
+\hline
+{\em erase\+Length} & Length of data to erase in flash memory it must land on a 1\+K\+B boundry, set to 0x0 to skip erasure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 139 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_ga18a2430e892002b301ba2372508f4248}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+\+F\+L\+A\+S\+H\+\_\+bad\+Write\+I\+S\+R@{twe\+\_\+\+F\+L\+A\+S\+H\+\_\+bad\+Write\+I\+S\+R}}
+\index{twe\+\_\+\+F\+L\+A\+S\+H\+\_\+bad\+Write\+I\+S\+R@{twe\+\_\+\+F\+L\+A\+S\+H\+\_\+bad\+Write\+I\+S\+R}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+\+F\+L\+A\+S\+H\+\_\+bad\+Write\+I\+S\+R}]{\setlength{\rightskip}{0pt plus 5cm}void twe\+\_\+\+F\+L\+A\+S\+H\+\_\+bad\+Write\+I\+S\+R (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_ga18a2430e892002b301ba2372508f4248}
+Interrupt handler (I\+S\+R) that executes when an improper write to flash is attempted 
+
+Definition at line 185 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_ga1a78bf5baccf03f8f27047a9738a49a7}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+\+I2\+C\+Master\+Verify@{twe\+\_\+\+I2\+C\+Master\+Verify}}
+\index{twe\+\_\+\+I2\+C\+Master\+Verify@{twe\+\_\+\+I2\+C\+Master\+Verify}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+\+I2\+C\+Master\+Verify}]{\setlength{\rightskip}{0pt plus 5cm}void twe\+\_\+\+I2\+C\+Master\+Verify (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{ui32base, }
+\item[{bool}]{burst, }
+\item[{bool}]{receive}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_ga1a78bf5baccf03f8f27047a9738a49a7}
+Verifies that a transmission from the master has completed successfully
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui32base} & Base address of the I2\+C peripheral\\
+\hline
+{\em burst} & Set to true if burst mode was used for the transmission\\
+\hline
+{\em receive} & Set to true if a receive transmission is to be verified Set to false if a send transmission is to be verified\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Waits until a transmission is complete and then checks that no errors have occurred
+
+If an error occurs the I2\+C transmission is stopped, the error L\+E\+D is lit and the program enters an infinite loop to hold the state. 
+\end{DoxyNote}
+
+
+Definition at line 647 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_gad27d12d3db25ab02cab49719679112ff}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+init\+Flash@{twe\+\_\+init\+Flash}}
+\index{twe\+\_\+init\+Flash@{twe\+\_\+init\+Flash}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+init\+Flash}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t twe\+\_\+init\+Flash (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{code\+Start, }
+\item[{uint32\+\_\+t}]{code\+Reserve\+Length, }
+\item[{uint32\+\_\+t}]{data\+Start, }
+\item[{uint32\+\_\+t}]{data\+Erase\+Length}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_gad27d12d3db25ab02cab49719679112ff}
+Initializes the Flash Protects the part of the flash memory from address code\+Start through code\+Start + code\+Reserve\+Length by setting to only execute (Flash\+Execute\+Only) Sets up the flash interrupt in case the program attempts to access the protected flash portions. Make sure the I\+S\+R is added to the N\+V\+I\+C table
+
+\begin{DoxyNote}{Note}
+Make sure the N\+V\+I\+C is not contained in the protected code memory
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em code\+Start} & -\/ start location of flash memory that is to be reserved it must land on a 2\+K\+B boundry \\
+\hline
+{\em code\+Reserve\+Length} & -\/ length of code to protect in flash memory it must land on a 2\+K\+B boundry, set to 0x0 to skip protection \\
+\hline
+{\em data\+Start} & -\/ start location of flash memory that is to be erased it must land on a 1\+K\+B boundry \\
+\hline
+{\em data\+Erase\+Length} & -\/ length of data to erase in flash memory it must land on a 1\+K\+B boundry, set to 0x0 to skip erasure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 119 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_ga47eb53d1a60d2924fe5e17bf3deb5152}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+init\+F\+P\+U@{twe\+\_\+init\+F\+P\+U}}
+\index{twe\+\_\+init\+F\+P\+U@{twe\+\_\+init\+F\+P\+U}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+init\+F\+P\+U}]{\setlength{\rightskip}{0pt plus 5cm}void twe\+\_\+init\+F\+P\+U (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_ga47eb53d1a60d2924fe5e17bf3deb5152}
+Initializes the F\+P\+U 
+
+Definition at line 198 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_ga861b56e4ce584719742baa7cb7e7bf40}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+init\+F\+P\+Ulazy@{twe\+\_\+init\+F\+P\+Ulazy}}
+\index{twe\+\_\+init\+F\+P\+Ulazy@{twe\+\_\+init\+F\+P\+Ulazy}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+init\+F\+P\+Ulazy}]{\setlength{\rightskip}{0pt plus 5cm}void twe\+\_\+init\+F\+P\+Ulazy (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_ga861b56e4ce584719742baa7cb7e7bf40}
+Initializes the F\+P\+U with lazy stacking enabled 
+
+Definition at line 205 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_ga1862377c39a12ea09c946e22ee9e6853}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+init\+Processing\+Indicator@{twe\+\_\+init\+Processing\+Indicator}}
+\index{twe\+\_\+init\+Processing\+Indicator@{twe\+\_\+init\+Processing\+Indicator}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+init\+Processing\+Indicator}]{\setlength{\rightskip}{0pt plus 5cm}void twe\+\_\+init\+Processing\+Indicator (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_ga1862377c39a12ea09c946e22ee9e6853}
+Initializes the processing indicator G\+P\+I\+O output 
+
+Definition at line 387 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_gac3d4a41e4cdbf8f1347467c6e6a4f4d9}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+init\+System80\+M\+Hz@{twe\+\_\+init\+System80\+M\+Hz}}
+\index{twe\+\_\+init\+System80\+M\+Hz@{twe\+\_\+init\+System80\+M\+Hz}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+init\+System80\+M\+Hz}]{\setlength{\rightskip}{0pt plus 5cm}void twe\+\_\+init\+System80\+M\+Hz (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_gac3d4a41e4cdbf8f1347467c6e6a4f4d9}
+Initializes the U\+A\+R\+T interrupt for commands Receives commands for the device 
+
+Definition at line 329 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_ga6595fbba30948b76bb25dd132b927d24}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+init\+U\+A\+R\+T@{twe\+\_\+init\+U\+A\+R\+T}}
+\index{twe\+\_\+init\+U\+A\+R\+T@{twe\+\_\+init\+U\+A\+R\+T}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+init\+U\+A\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}void twe\+\_\+init\+U\+A\+R\+T (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{Sys\+Clk\+Freq, }
+\item[{uint32\+\_\+t}]{baud\+Rate}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_ga6595fbba30948b76bb25dd132b927d24}
+Initializes the U\+A\+R\+T
+
+
+\begin{DoxyParams}{Parameters}
+{\em Sys\+Clk\+Freq} & -\/ clock frequency of the system\\
+\hline
+{\em baud\+Rate} & -\/ baud rate of the U\+A\+R\+T e.\+g. 115200 to connect to P\+C\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+U\+A\+R\+T is connected to the stellaris virtual serial port through the U\+S\+B connection
+
+Configuration\+: 8 data bits one stop bit no parity 
+\end{DoxyNote}
+
+
+Definition at line 230 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_ga426827ec2d6bdc7dd6a7ddad17d4d919}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+init\+U\+D\+M\+Acontroller@{twe\+\_\+init\+U\+D\+M\+Acontroller}}
+\index{twe\+\_\+init\+U\+D\+M\+Acontroller@{twe\+\_\+init\+U\+D\+M\+Acontroller}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+init\+U\+D\+M\+Acontroller}]{\setlength{\rightskip}{0pt plus 5cm}void twe\+\_\+init\+U\+D\+M\+Acontroller (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_ga426827ec2d6bdc7dd6a7ddad17d4d919}
+Initialize the u\+D\+M\+A controller at the system level. It also enables it to continue to run while the processor is in sleep.
+
+\begin{DoxyNote}{Note}
+Individual u\+D\+M\+A channels need to be initialized seperately.
+
+Must also initialize the u\+D\+M\+A table immediately following this call. i.\+e. M\+A\+P\+\_\+u\+D\+M\+A\+Control\+Base\+Set(u\+D\+M\+Acontrol\+Table); 
+\end{DoxyNote}
+
+
+Definition at line 348 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_ga333907901d092e19fb725650ea54b7dc}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+protect\+Flash\+Range@{twe\+\_\+protect\+Flash\+Range}}
+\index{twe\+\_\+protect\+Flash\+Range@{twe\+\_\+protect\+Flash\+Range}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+protect\+Flash\+Range}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t twe\+\_\+protect\+Flash\+Range (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{start\+Address, }
+\item[{uint32\+\_\+t}]{protect\+Length, }
+\item[{t\+Flash\+Protection}]{e\+Protect}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_ga333907901d092e19fb725650ea54b7dc}
+Protects the indicated flash memory 
+\begin{DoxyParams}{Parameters}
+{\em start\+Address} & Start location of flash memory that is to be reserved it must land on a 2\+K\+B boundry \\
+\hline
+{\em protect\+Length} & Length of code to protect in flash memory it must land on a 2\+K\+B boundry, set to 0x0 to skip protection \\
+\hline
+{\em e\+Protect} & Protection type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 163 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_gaa9b8fe7a3ca1dd437e493f91949168b0}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T@{twe\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T}}
+\index{twe\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T@{twe\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T}]{\setlength{\rightskip}{0pt plus 5cm}void twe\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{ui32\+Base}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_gaa9b8fe7a3ca1dd437e493f91949168b0}
+Enables the T\+X end of transmission (E\+O\+T) feature that allows the T\+X\+F\+F interrupt to trigger immediately when a transmission completes
+
+\begin{DoxyNote}{Note}
+The E\+O\+T interrupt triggers the T\+X\+F\+F interrupt
+
+The T\+M4\+C1294\+N\+C\+P\+D\+T also has an independent E\+O\+T interrupt
+
+This enable is in the C\+R1 register rather than the interrupt mask (I\+M) register 
+\end{DoxyNote}
+
+
+Definition at line 511 of file tw\+\_\+extension.\+c.
+
+\hypertarget{group__tivaware__extension_ga3f9ade243fdb9bb04c6b9c85d794cf65}{\index{Tivaware Extension@{Tivaware Extension}!twe\+\_\+u\+D\+M\+A\+Error\+Handler@{twe\+\_\+u\+D\+M\+A\+Error\+Handler}}
+\index{twe\+\_\+u\+D\+M\+A\+Error\+Handler@{twe\+\_\+u\+D\+M\+A\+Error\+Handler}!Tivaware Extension@{Tivaware Extension}}
+\subsubsection[{twe\+\_\+u\+D\+M\+A\+Error\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void twe\+\_\+u\+D\+M\+A\+Error\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__tivaware__extension_ga3f9ade243fdb9bb04c6b9c85d794cf65}
+u\+D\+M\+A Error Handler
+
+\begin{DoxyNote}{Note}
+Need to add the I\+S\+R to the N\+V\+I\+C table in the row labeled \char`\"{}u\+D\+M\+A Error\char`\"{} 
+\end{DoxyNote}
+
+
+Definition at line 369 of file tw\+\_\+extension.\+c.
+

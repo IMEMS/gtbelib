@@ -1,0 +1,59 @@
+\hypertarget{group__swpll}{\section{Software Defined P\+L\+L}
+\label{group__swpll}\index{Software Defined P\+L\+L@{Software Defined P\+L\+L}}
+}
+
+
+drivers for a software defined phase locked loop Used with the Georgia Tech Back End (G\+T\+B\+E) G\+T\+B\+E-\/\+E\+K-\/\+T\+M4\+C123\+G\+X\+L G\+T\+B\+E-\/\+E\+K-\/\+T\+M4\+C1294\+X\+L Files\+: \hyperlink{dac__ad5754_8c_source}{dac\+\_\+ad5754.\+c} \hyperlink{dac__ad5754_8h_source}{dac\+\_\+ad5754.\+h}  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__swpll_ga81cc7183056b2acb778f92791287b0fa}{init\+F\+I\+R} (\hyperlink{structfir_inst}{fir\+Inst} $\ast$fir\+Filt, float $\ast$filt\+Coeff)
+\item 
+float \hyperlink{group__swpll_ga688dcbcfe84553e2d6efc7b859781388}{F\+I\+Rfilter} (\hyperlink{structfir_inst}{fir\+Inst} $\ast$filt, float input)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+drivers for a software defined phase locked loop Used with the Georgia Tech Back End (G\+T\+B\+E) G\+T\+B\+E-\/\+E\+K-\/\+T\+M4\+C123\+G\+X\+L G\+T\+B\+E-\/\+E\+K-\/\+T\+M4\+C1294\+X\+L Files\+: \hyperlink{dac__ad5754_8c_source}{dac\+\_\+ad5754.\+c} \hyperlink{dac__ad5754_8h_source}{dac\+\_\+ad5754.\+h} 
+
+\begin{DoxyAuthor}{Author}
+Curtis Mayberry 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__swpll_ga688dcbcfe84553e2d6efc7b859781388}{\index{Software Defined P\+L\+L@{Software Defined P\+L\+L}!F\+I\+Rfilter@{F\+I\+Rfilter}}
+\index{F\+I\+Rfilter@{F\+I\+Rfilter}!Software Defined P\+L\+L@{Software Defined P\+L\+L}}
+\subsubsection[{F\+I\+Rfilter}]{\setlength{\rightskip}{0pt plus 5cm}float F\+I\+Rfilter (
+\begin{DoxyParamCaption}
+\item[{{\bf fir\+Inst} $\ast$}]{filt, }
+\item[{float}]{input}
+\end{DoxyParamCaption}
+)}}\label{group__swpll_ga688dcbcfe84553e2d6efc7b859781388}
+Applies an input to a running F\+I\+R filter, filt. The input is added to a circular buffer
+
+
+\begin{DoxyParams}{Parameters}
+{\em filt} & -\/ an initialized F\+I\+R filter\\
+\hline
+{\em input} & -\/ A new data point to add to the filter's data buffer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file swpll.\+c.
+
+\hypertarget{group__swpll_ga81cc7183056b2acb778f92791287b0fa}{\index{Software Defined P\+L\+L@{Software Defined P\+L\+L}!init\+F\+I\+R@{init\+F\+I\+R}}
+\index{init\+F\+I\+R@{init\+F\+I\+R}!Software Defined P\+L\+L@{Software Defined P\+L\+L}}
+\subsubsection[{init\+F\+I\+R}]{\setlength{\rightskip}{0pt plus 5cm}void init\+F\+I\+R (
+\begin{DoxyParamCaption}
+\item[{{\bf fir\+Inst} $\ast$}]{fir\+Filt, }
+\item[{float $\ast$}]{filt\+Coeff}
+\end{DoxyParamCaption}
+)}}\label{group__swpll_ga81cc7183056b2acb778f92791287b0fa}
+Initializes an F\+I\+R filter 
+
+Definition at line 57 of file swpll.\+c.
+

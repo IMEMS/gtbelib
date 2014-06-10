@@ -1,0 +1,153 @@
+\hypertarget{group__temp__adt7310}{\section{Temperature Sensor}
+\label{group__temp__adt7310}\index{Temperature Sensor@{Temperature Sensor}}
+}
+
+
+Drivers for the A\+D\+I A\+D\+T7310 S\+P\+I digital temperature sensor Files\+: \hyperlink{temp___a_d_t7310_8c_source}{temp\+\_\+\+A\+D\+T7310.\+c} \hyperlink{temp___a_d_t7310_8h_source}{temp\+\_\+\+A\+D\+T7310.\+h}.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__temp__adt7310_ga5f3b4edebb0977819f74c364c38a6ba5}{temp\+\_\+config\+Sensor\+Continuous\+Read} (uint32\+\_\+t $\ast$statusreg)
+\item 
+void \hyperlink{group__temp__adt7310_ga68c47666b99a9471df525c4d78e06c46}{temp\+\_\+reset\+S\+P\+I} (void)
+\item 
+float \hyperlink{group__temp__adt7310_ga1d67c61b135100d8cdee8fded5f0e913}{temp\+\_\+deg\+C13bit\+Reading} (uint32\+\_\+t reading)
+\item 
+float \hyperlink{group__temp__adt7310_gaa1145f9f691431e44f36fd4066a612bc}{temp\+\_\+deg\+F13bit\+Reading} (uint32\+\_\+t reading)
+\item 
+void \hyperlink{group__temp__adt7310_gae4587f7cf6a8aad0b24186cd669cef01}{temp\+\_\+u\+D\+M\+A\+Error\+Handler} (void)
+\item 
+void \hyperlink{group__temp__adt7310_ga12988dac5d8f33ed94d28d0bc9ae72cf}{temp\+\_\+init\+S\+S\+I0u\+D\+M\+A} (void)
+\item 
+void \hyperlink{group__temp__adt7310_ga4596a1a67b34c1b45db093a95a9493b8}{temp\+\_\+init\+Timer2\+A} (void)
+\item 
+void \hyperlink{group__temp__adt7310_gac62247f217fb0c507c534f4b8393c391}{temp\+\_\+\+Timer2\+Int\+Handler} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Drivers for the A\+D\+I A\+D\+T7310 S\+P\+I digital temperature sensor Files\+: \hyperlink{temp___a_d_t7310_8c_source}{temp\+\_\+\+A\+D\+T7310.\+c} \hyperlink{temp___a_d_t7310_8h_source}{temp\+\_\+\+A\+D\+T7310.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Curtis Mayberry 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__temp__adt7310_ga5f3b4edebb0977819f74c364c38a6ba5}{\index{Temperature Sensor@{Temperature Sensor}!temp\+\_\+config\+Sensor\+Continuous\+Read@{temp\+\_\+config\+Sensor\+Continuous\+Read}}
+\index{temp\+\_\+config\+Sensor\+Continuous\+Read@{temp\+\_\+config\+Sensor\+Continuous\+Read}!Temperature Sensor@{Temperature Sensor}}
+\subsubsection[{temp\+\_\+config\+Sensor\+Continuous\+Read}]{\setlength{\rightskip}{0pt plus 5cm}void temp\+\_\+config\+Sensor\+Continuous\+Read (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{statusreg}
+\end{DoxyParamCaption}
+)}}\label{group__temp__adt7310_ga5f3b4edebb0977819f74c364c38a6ba5}
+Configures the temperature sensor for continuous read mode and reads the status register Utilizes S\+S\+I0
+
+
+\begin{DoxyParams}{Parameters}
+{\em statusreg} & -\/ A pointer to store the status information that is read \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 87 of file temp\+\_\+\+A\+D\+T7310.\+c.
+
+\hypertarget{group__temp__adt7310_ga1d67c61b135100d8cdee8fded5f0e913}{\index{Temperature Sensor@{Temperature Sensor}!temp\+\_\+deg\+C13bit\+Reading@{temp\+\_\+deg\+C13bit\+Reading}}
+\index{temp\+\_\+deg\+C13bit\+Reading@{temp\+\_\+deg\+C13bit\+Reading}!Temperature Sensor@{Temperature Sensor}}
+\subsubsection[{temp\+\_\+deg\+C13bit\+Reading}]{\setlength{\rightskip}{0pt plus 5cm}float temp\+\_\+deg\+C13bit\+Reading (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{reading}
+\end{DoxyParamCaption}
+)}}\label{group__temp__adt7310_ga1d67c61b135100d8cdee8fded5f0e913}
+Converts digital temperature reading to degrees Celcius
+
+
+\begin{DoxyParams}{Parameters}
+{\em reading} & -\/ 13 bit digital temperature reading from the temperature sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Temperature in degrees Celcius 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file temp\+\_\+\+A\+D\+T7310.\+c.
+
+\hypertarget{group__temp__adt7310_gaa1145f9f691431e44f36fd4066a612bc}{\index{Temperature Sensor@{Temperature Sensor}!temp\+\_\+deg\+F13bit\+Reading@{temp\+\_\+deg\+F13bit\+Reading}}
+\index{temp\+\_\+deg\+F13bit\+Reading@{temp\+\_\+deg\+F13bit\+Reading}!Temperature Sensor@{Temperature Sensor}}
+\subsubsection[{temp\+\_\+deg\+F13bit\+Reading}]{\setlength{\rightskip}{0pt plus 5cm}float temp\+\_\+deg\+F13bit\+Reading (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{reading}
+\end{DoxyParamCaption}
+)}}\label{group__temp__adt7310_gaa1145f9f691431e44f36fd4066a612bc}
+Converts digital temperature reading to degrees Fahrenheit
+
+
+\begin{DoxyParams}{Parameters}
+{\em reading} & -\/ 13 bit digital temperature reading from the temperature sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Temperature in degrees Fahrenheit 
+\end{DoxyReturn}
+
+
+Definition at line 163 of file temp\+\_\+\+A\+D\+T7310.\+c.
+
+\hypertarget{group__temp__adt7310_ga12988dac5d8f33ed94d28d0bc9ae72cf}{\index{Temperature Sensor@{Temperature Sensor}!temp\+\_\+init\+S\+S\+I0u\+D\+M\+A@{temp\+\_\+init\+S\+S\+I0u\+D\+M\+A}}
+\index{temp\+\_\+init\+S\+S\+I0u\+D\+M\+A@{temp\+\_\+init\+S\+S\+I0u\+D\+M\+A}!Temperature Sensor@{Temperature Sensor}}
+\subsubsection[{temp\+\_\+init\+S\+S\+I0u\+D\+M\+A}]{\setlength{\rightskip}{0pt plus 5cm}void temp\+\_\+init\+S\+S\+I0u\+D\+M\+A (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__temp__adt7310_ga12988dac5d8f33ed94d28d0bc9ae72cf}
+Initializes the S\+S\+I0 to be used with the S\+S\+I0 u\+D\+M\+A 
+
+Definition at line 208 of file temp\+\_\+\+A\+D\+T7310.\+c.
+
+\hypertarget{group__temp__adt7310_ga4596a1a67b34c1b45db093a95a9493b8}{\index{Temperature Sensor@{Temperature Sensor}!temp\+\_\+init\+Timer2\+A@{temp\+\_\+init\+Timer2\+A}}
+\index{temp\+\_\+init\+Timer2\+A@{temp\+\_\+init\+Timer2\+A}!Temperature Sensor@{Temperature Sensor}}
+\subsubsection[{temp\+\_\+init\+Timer2\+A}]{\setlength{\rightskip}{0pt plus 5cm}void temp\+\_\+init\+Timer2\+A (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__temp__adt7310_ga4596a1a67b34c1b45db093a95a9493b8}
+Initializes Timer 2\+A to control read sequence timing 
+
+Definition at line 241 of file temp\+\_\+\+A\+D\+T7310.\+c.
+
+\hypertarget{group__temp__adt7310_ga68c47666b99a9471df525c4d78e06c46}{\index{Temperature Sensor@{Temperature Sensor}!temp\+\_\+reset\+S\+P\+I@{temp\+\_\+reset\+S\+P\+I}}
+\index{temp\+\_\+reset\+S\+P\+I@{temp\+\_\+reset\+S\+P\+I}!Temperature Sensor@{Temperature Sensor}}
+\subsubsection[{temp\+\_\+reset\+S\+P\+I}]{\setlength{\rightskip}{0pt plus 5cm}void temp\+\_\+reset\+S\+P\+I (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__temp__adt7310_ga68c47666b99a9471df525c4d78e06c46}
+Resets the S\+P\+I bus to clear any partial instructions, etc. Utilizes S\+S\+I0 
+
+Definition at line 123 of file temp\+\_\+\+A\+D\+T7310.\+c.
+
+\hypertarget{group__temp__adt7310_gac62247f217fb0c507c534f4b8393c391}{\index{Temperature Sensor@{Temperature Sensor}!temp\+\_\+\+Timer2\+Int\+Handler@{temp\+\_\+\+Timer2\+Int\+Handler}}
+\index{temp\+\_\+\+Timer2\+Int\+Handler@{temp\+\_\+\+Timer2\+Int\+Handler}!Temperature Sensor@{Temperature Sensor}}
+\subsubsection[{temp\+\_\+\+Timer2\+Int\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void temp\+\_\+\+Timer2\+Int\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__temp__adt7310_gac62247f217fb0c507c534f4b8393c391}
+Timer Interrupt handler Be sure that the interrupt is added to the N\+V\+I\+C by adding it to the "Timer 2 subtimer A” location in tm4c123gh6pm\+\_\+startup\+\_\+\+C\+C\+S.\+c 
+
+Definition at line 264 of file temp\+\_\+\+A\+D\+T7310.\+c.
+
+\hypertarget{group__temp__adt7310_gae4587f7cf6a8aad0b24186cd669cef01}{\index{Temperature Sensor@{Temperature Sensor}!temp\+\_\+u\+D\+M\+A\+Error\+Handler@{temp\+\_\+u\+D\+M\+A\+Error\+Handler}}
+\index{temp\+\_\+u\+D\+M\+A\+Error\+Handler@{temp\+\_\+u\+D\+M\+A\+Error\+Handler}!Temperature Sensor@{Temperature Sensor}}
+\subsubsection[{temp\+\_\+u\+D\+M\+A\+Error\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void temp\+\_\+u\+D\+M\+A\+Error\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__temp__adt7310_gae4587f7cf6a8aad0b24186cd669cef01}
+u\+D\+M\+A transfer error handler Need to add to N\+V\+I\+C table in the \char`\"{}u\+D\+M\+A Error\char`\"{} Row 
+
+Definition at line 184 of file temp\+\_\+\+A\+D\+T7310.\+c.
+

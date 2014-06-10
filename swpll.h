@@ -62,13 +62,17 @@
  * TypeDefs *
  ************/
 
+/**
+ * fir filter instance for use with CMSIS
+ *  A structure to define an FIR filter in the CMSIS DSP library
+ **/
 typedef struct {
-	float* coeff;
-	float  dataBuffer[NUM_TAPS];
-	float* pData[NUM_TAPS];
-	float* dataHead;
-	float* dataBufferStart;
-	float* dataBufferEnd;
+	float* coeff;				   	/**< FIR filter coefficients */
+	float  dataBuffer[NUM_TAPS];	/**< Input Data buffer */
+	float* pData[NUM_TAPS];			/**< Pointer to the data */
+	float* dataHead;				/**< head of the data */
+	float* dataBufferStart;			/**< start of the data buffer*/
+	float* dataBufferEnd;			/**< end of the data buffer*/
 } firInst;
 
 /**************

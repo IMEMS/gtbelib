@@ -1,0 +1,630 @@
+\hypertarget{group___d_a_c__ad5754}{\section{A\+D\+C}
+\label{group___d_a_c__ad5754}\index{A\+D\+C@{A\+D\+C}}
+}
+
+
+Drivers for the A\+D\+I ad5754 D\+A\+C. Interfaces the T\+I tiva C Launchpad with the A\+D\+I dac5754 digital to analog converter. Files\+: \hyperlink{dac__ad5754_8c_source}{dac\+\_\+ad5754.\+c} \hyperlink{dac__ad5754_8h_source}{dac\+\_\+ad5754.\+h}.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga65670bedae308f00f19b4a95e444d0c6}{D\+A\+C\+\_\+init\+D\+A\+C} (uint32\+\_\+t range\+Value, uint32\+\_\+t pwr\+Settings\+Value, uint32\+\_\+t Sys\+Clk\+Freq)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga5c32da52b4ee8acf91ae4309ff8056aa}{D\+A\+C\+\_\+init\+S\+S\+I} (uint32\+\_\+t Sys\+Clk\+Freq)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga63a8682c2a50d7edc7a8cca6a84b0292}{D\+A\+C\+\_\+init\+S\+S\+Iint} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga95cf8880ebefcfa5a3c877f33a0de56f}{D\+A\+C\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T} (uint32\+\_\+t ui32\+Base)
+\item 
+void \hyperlink{group___d_a_c__ad5754_gaabc6352feab3ad0f94de4b79bc0f5b72}{D\+A\+C\+\_\+int\+Handler\+S\+S\+I} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga37030529d834f166eef7114fd71190e5}{D\+A\+C\+\_\+int\+Handler\+S\+S\+Itimer} (void)
+\item 
+uint32\+\_\+t \hyperlink{group___d_a_c__ad5754_gaa7ca584d832a5a8155f2715e0c583f95}{D\+A\+C\+\_\+get\+S\+S\+In\+Settings\+C\+R1} (uint32\+\_\+t ui32\+Base)
+\item 
+void \hyperlink{group___d_a_c__ad5754_gaa41f00f804f48c88f4aee18a02aa6a8e}{D\+A\+C\+\_\+init\+Ctl\+L\+D\+A\+C} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga33b8dcd9e7b399418db9f3f2f6d6cad7}{D\+A\+C\+\_\+init\+Ctl\+C\+L\+R} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga04548e3a1e5b6a200c540b7a4227ec4d}{D\+A\+C\+\_\+set\+Range} (uint32\+\_\+t dac\+Address, uint32\+\_\+t range\+Value)
+\item 
+void \hyperlink{group___d_a_c__ad5754_gae1622532a9332006dd5f19a22b98825b}{D\+A\+C\+\_\+set\+Power\+Ctl} (uint32\+\_\+t pwr\+Settings\+Value)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga4c9d4568cf8efdb66e2ded3e2bde168d}{D\+A\+C\+\_\+set\+Settings\+Ctl} (uint32\+\_\+t ctl\+Settings\+Value)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga2db4e1ba2471f68b497c3d6db1ab7726}{D\+A\+C\+\_\+clear\+D\+A\+Cs} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga22ab2e74e2db83f7af5d9888f641d8c5}{D\+A\+C\+\_\+clear\+D\+A\+Cs\+Pin} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga1f7eda4d64087b938f5f62ec8e8cbe5e}{D\+A\+C\+\_\+load\+D\+A\+Cs} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_gaa375fe95555a421ca76283998e64ae41}{D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga65c9a05f616fd3cc94415869edf0c9c0}{D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin\+Timer} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga4204dbf05cb09398e186dcd71d37e0d7}{D\+A\+C\+\_\+init\+Timers\+L\+D\+A\+C} (bool en\+Forcer, bool en\+Quad, uint32\+\_\+t pulse\+Width)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga5c92c520051e198a9d24f5d14893f506}{D\+A\+C\+\_\+write\+Nop} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_gae6d7c8f3167d84f60a56a3c1bb6252b7}{D\+A\+C\+\_\+update\+Data\+Volt} (uint32\+\_\+t dac\+Address, uint32\+\_\+t range\+Value, \+\_\+\+Bool bin, float voltage)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga6042bbafba1e30640f0dbdd9dbe4d6b1}{D\+A\+C\+\_\+update\+Data\+Dig} (uint32\+\_\+t dac\+Address, uint32\+\_\+t data)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga4d051b751ee930dca68513b6c7dec46e}{D\+A\+Cd\+\_\+init\+D\+A\+C} (uint32\+\_\+t range\+Value, uint32\+\_\+t pwr\+Settings\+Value, uint32\+\_\+t Sys\+Clk\+Freq)
+\item 
+void \hyperlink{group___d_a_c__ad5754_gac3aeb454aade9dd1def535c072ea78fd}{D\+A\+Cd\+\_\+set\+Settings\+Ctl} (uint32\+\_\+t ctl\+Settings\+Value)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga20458db50830182bcf912a60e9df04cd}{D\+A\+Cd\+\_\+set\+Range} (uint32\+\_\+t dac\+Address, uint32\+\_\+t range\+Value)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga094f43f6aa44b22562d49efe5403c2ca}{D\+A\+Cd\+\_\+set\+Power\+Ctl} (uint32\+\_\+t pwr\+Settings\+Value)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga45f4b52890f9373b7781925529b37f5a}{D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+A\+H} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_gafdc88b1e8452f3717199e9dfbc780992}{D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+E\+H} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga5aa63b602b15c7328deb2e562501e8d2}{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+E\+H} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_gaa88d6be5a9ccd5ff94b102c1f1a4b464}{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+A\+H} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga2b2a5da94a4c27b60e1577793bdb970e}{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+Pin\+\_\+\+E\+H} (void)
+\item 
+void \hyperlink{group___d_a_c__ad5754_gaa6e1b8d821a10a4ca887a743f2123b3d}{D\+A\+Cd\+\_\+update\+Data\+Volt} (uint32\+\_\+t dac\+Address, uint32\+\_\+t range\+Value, \+\_\+\+Bool bin\+\_\+\+A\+D, \+\_\+\+Bool bin\+\_\+\+E\+H, float voltage\+\_\+\+A\+D, float voltage\+\_\+\+E\+H)
+\item 
+void \hyperlink{group___d_a_c__ad5754_ga14aa5f3fc7902cd96eefd32b56b728d4}{D\+A\+Cd\+\_\+update\+Data\+Dig} (uint32\+\_\+t dac\+Address, uint32\+\_\+t data\+\_\+\+A\+D, uint32\+\_\+t data\+\_\+\+E\+H)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Drivers for the A\+D\+I ad5754 D\+A\+C. Interfaces the T\+I tiva C Launchpad with the A\+D\+I dac5754 digital to analog converter. Files\+: \hyperlink{dac__ad5754_8c_source}{dac\+\_\+ad5754.\+c} \hyperlink{dac__ad5754_8h_source}{dac\+\_\+ad5754.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Curtis Mayberry 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___d_a_c__ad5754_ga2db4e1ba2471f68b497c3d6db1ab7726}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+clear\+D\+A\+Cs@{D\+A\+C\+\_\+clear\+D\+A\+Cs}}
+\index{D\+A\+C\+\_\+clear\+D\+A\+Cs@{D\+A\+C\+\_\+clear\+D\+A\+Cs}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+clear\+D\+A\+Cs}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+clear\+D\+A\+Cs (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga2db4e1ba2471f68b497c3d6db1ab7726}
+Clears the output of D\+A\+Cs A-\/\+D by writing to the control register. \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes. 
+\end{DoxyNote}
+
+
+Definition at line 312 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga22ab2e74e2db83f7af5d9888f641d8c5}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+clear\+D\+A\+Cs\+Pin@{D\+A\+C\+\_\+clear\+D\+A\+Cs\+Pin}}
+\index{D\+A\+C\+\_\+clear\+D\+A\+Cs\+Pin@{D\+A\+C\+\_\+clear\+D\+A\+Cs\+Pin}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+clear\+D\+A\+Cs\+Pin}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+clear\+D\+A\+Cs\+Pin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga22ab2e74e2db83f7af5d9888f641d8c5}
+Clears the output of all 8 D\+A\+Cs by pulling $\sim$\+C\+L\+R pins low. 
+
+Definition at line 321 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_gaa7ca584d832a5a8155f2715e0c583f95}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+get\+S\+S\+In\+Settings\+C\+R1@{D\+A\+C\+\_\+get\+S\+S\+In\+Settings\+C\+R1}}
+\index{D\+A\+C\+\_\+get\+S\+S\+In\+Settings\+C\+R1@{D\+A\+C\+\_\+get\+S\+S\+In\+Settings\+C\+R1}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+get\+S\+S\+In\+Settings\+C\+R1}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t D\+A\+C\+\_\+get\+S\+S\+In\+Settings\+C\+R1 (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{ui32\+Base}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_gaa7ca584d832a5a8155f2715e0c583f95}
+Reads the S\+S\+I control register 1
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui32\+Base} & -\/ The base address of the S\+S\+In peripheral\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+S\+I C\+R1 register value 
+\end{DoxyReturn}
+
+
+Definition at line 226 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga33b8dcd9e7b399418db9f3f2f6d6cad7}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+init\+Ctl\+C\+L\+R@{D\+A\+C\+\_\+init\+Ctl\+C\+L\+R}}
+\index{D\+A\+C\+\_\+init\+Ctl\+C\+L\+R@{D\+A\+C\+\_\+init\+Ctl\+C\+L\+R}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+init\+Ctl\+C\+L\+R}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+init\+Ctl\+C\+L\+R (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga33b8dcd9e7b399418db9f3f2f6d6cad7}
+Initialize clear Control initializes\+: $\sim$\+C\+L\+R -\/ control to clear the D\+A\+C output \begin{DoxyNote}{Note}
+sets $\sim$\+C\+L\+R 
+\end{DoxyNote}
+
+
+Definition at line 246 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_gaa41f00f804f48c88f4aee18a02aa6a8e}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+init\+Ctl\+L\+D\+A\+C@{D\+A\+C\+\_\+init\+Ctl\+L\+D\+A\+C}}
+\index{D\+A\+C\+\_\+init\+Ctl\+L\+D\+A\+C@{D\+A\+C\+\_\+init\+Ctl\+L\+D\+A\+C}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+init\+Ctl\+L\+D\+A\+C}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+init\+Ctl\+L\+D\+A\+C (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_gaa41f00f804f48c88f4aee18a02aa6a8e}
+Initialize L\+D\+A\+C Controls initializes\+: $\sim$\+L\+D\+A\+C\+\_\+\+F\+O\+R\+C\+E\+R, $\sim$\+L\+D\+A\+C\+\_\+\+Quad \begin{DoxyNote}{Note}
+sets $\sim$\+L\+D\+A\+C\+\_\+\+F\+O\+R\+C\+E\+R and $\sim$\+L\+D\+A\+C\+\_\+\+Quad 
+\end{DoxyNote}
+
+
+Definition at line 235 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga65670bedae308f00f19b4a95e444d0c6}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+init\+D\+A\+C@{D\+A\+C\+\_\+init\+D\+A\+C}}
+\index{D\+A\+C\+\_\+init\+D\+A\+C@{D\+A\+C\+\_\+init\+D\+A\+C}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+init\+D\+A\+C}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+init\+D\+A\+C (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{range\+Value, }
+\item[{uint32\+\_\+t}]{pwr\+Settings\+Value, }
+\item[{uint32\+\_\+t}]{Sys\+Clk\+Freq}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga65670bedae308f00f19b4a95e444d0c6}
+Initializes the D\+A\+C Sets the output voltage range, turns on the selected D\+A\+Cs and sets the control settings. N\+O\+T\+E\+: Make sure D\+A\+C\+\_\+\+W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+A\+Y is defined properly
+
+Sets all D\+A\+C voltage output ranges to -\/5v to +5v turns on D\+A\+C output A and B Turns on thermal shutdown, output current clamp, and turns off S\+D\+O 
+
+Definition at line 119 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga5c32da52b4ee8acf91ae4309ff8056aa}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+init\+S\+S\+I@{D\+A\+C\+\_\+init\+S\+S\+I}}
+\index{D\+A\+C\+\_\+init\+S\+S\+I@{D\+A\+C\+\_\+init\+S\+S\+I}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+init\+S\+S\+I}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+init\+S\+S\+I (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{Sys\+Clk\+Freq}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga5c32da52b4ee8acf91ae4309ff8056aa}
+initializes S\+S\+I0 for use with the D\+A\+C 
+
+Definition at line 136 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga63a8682c2a50d7edc7a8cca6a84b0292}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+init\+S\+S\+Iint@{D\+A\+C\+\_\+init\+S\+S\+Iint}}
+\index{D\+A\+C\+\_\+init\+S\+S\+Iint@{D\+A\+C\+\_\+init\+S\+S\+Iint}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+init\+S\+S\+Iint}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+init\+S\+S\+Iint (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga63a8682c2a50d7edc7a8cca6a84b0292}
+Initializes the S\+S\+I interrupt to load the D\+A\+C Uses the S\+S\+I T\+X end of transmission (E\+O\+T) interrupt to signal when to trigger the loading of the D\+A\+C. 
+
+Definition at line 167 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga4204dbf05cb09398e186dcd71d37e0d7}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+init\+Timers\+L\+D\+A\+C@{D\+A\+C\+\_\+init\+Timers\+L\+D\+A\+C}}
+\index{D\+A\+C\+\_\+init\+Timers\+L\+D\+A\+C@{D\+A\+C\+\_\+init\+Timers\+L\+D\+A\+C}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+init\+Timers\+L\+D\+A\+C}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+init\+Timers\+L\+D\+A\+C (
+\begin{DoxyParamCaption}
+\item[{bool}]{en\+Forcer, }
+\item[{bool}]{en\+Quad, }
+\item[{uint32\+\_\+t}]{pulse\+Width}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga4204dbf05cb09398e186dcd71d37e0d7}
+Initializes Timers for one shot operation of the L\+D\+A\+C pulse
+
+
+\begin{DoxyParams}{Parameters}
+{\em en\+Forcer} & -\/ enables the L\+D\+A\+C\+\_\+\+F\+O\+R\+C\+E\+R timer \\
+\hline
+{\em en\+Quad} & -\/ enables the L\+D\+A\+C\+\_\+\+Q\+U\+A\+D timer \\
+\hline
+{\em pulse\+Width} & -\/ Number of clock cycles to pulse the L\+D\+A\+C signal low.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Not available on the G\+T\+B\+E-\/\+T\+M4\+C123\+G\+X\+L 
+\end{DoxyNote}
+
+
+Definition at line 369 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_gaabc6352feab3ad0f94de4b79bc0f5b72}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+int\+Handler\+S\+S\+I@{D\+A\+C\+\_\+int\+Handler\+S\+S\+I}}
+\index{D\+A\+C\+\_\+int\+Handler\+S\+S\+I@{D\+A\+C\+\_\+int\+Handler\+S\+S\+I}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+int\+Handler\+S\+S\+I}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+int\+Handler\+S\+S\+I (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_gaabc6352feab3ad0f94de4b79bc0f5b72}
+Interrupt handler for loading the D\+A\+Cs after updating them \begin{DoxyNote}{Note}
+Need to add the I\+S\+R to the N\+V\+I\+C table in the row labeled \char`\"{}\+S\+S\+I\+X Rx and Tx\char`\"{} 
+\end{DoxyNote}
+
+
+Definition at line 196 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga37030529d834f166eef7114fd71190e5}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+int\+Handler\+S\+S\+Itimer@{D\+A\+C\+\_\+int\+Handler\+S\+S\+Itimer}}
+\index{D\+A\+C\+\_\+int\+Handler\+S\+S\+Itimer@{D\+A\+C\+\_\+int\+Handler\+S\+S\+Itimer}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+int\+Handler\+S\+S\+Itimer}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+int\+Handler\+S\+S\+Itimer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga37030529d834f166eef7114fd71190e5}
+Interrupt handler for loading the D\+A\+Cs with the timer after updating them \begin{DoxyNote}{Note}
+Need to add the I\+S\+R to the N\+V\+I\+C table in the row labeled \char`\"{}\+S\+S\+I\+X Rx and Tx\char`\"{} 
+\end{DoxyNote}
+
+
+Definition at line 210 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga1f7eda4d64087b938f5f62ec8e8cbe5e}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+load\+D\+A\+Cs@{D\+A\+C\+\_\+load\+D\+A\+Cs}}
+\index{D\+A\+C\+\_\+load\+D\+A\+Cs@{D\+A\+C\+\_\+load\+D\+A\+Cs}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+load\+D\+A\+Cs}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+load\+D\+A\+Cs (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga1f7eda4d64087b938f5f62ec8e8cbe5e}
+Loads data into the D\+A\+Cs from the data registers of all 4 D\+A\+Cs /note A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes. 
+
+Definition at line 332 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_gaa375fe95555a421ca76283998e64ae41}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin@{D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin}}
+\index{D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin@{D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_gaa375fe95555a421ca76283998e64ae41}
+Loads all 4 dacs with the value currently in their data register by pulling the $\sim$\+L\+D\+A\+C pin low 
+
+Definition at line 343 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga65c9a05f616fd3cc94415869edf0c9c0}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin\+Timer@{D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin\+Timer}}
+\index{D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin\+Timer@{D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin\+Timer}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin\+Timer}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+load\+D\+A\+Cs\+Pin\+Timer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga65c9a05f616fd3cc94415869edf0c9c0}
+Loads all 4 dacs with the value currently in their data register by pulling the $\sim$\+L\+D\+A\+C\+\_\+\+F\+O\+R\+C\+E\+R pin low
+
+\begin{DoxyNote}{Note}
+Uses the timer in one shot mode to pulse $\sim$\+L\+D\+A\+C\+\_\+\+F\+O\+R\+C\+E\+R low 
+\end{DoxyNote}
+
+
+Definition at line 356 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_gae1622532a9332006dd5f19a22b98825b}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+set\+Power\+Ctl@{D\+A\+C\+\_\+set\+Power\+Ctl}}
+\index{D\+A\+C\+\_\+set\+Power\+Ctl@{D\+A\+C\+\_\+set\+Power\+Ctl}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+set\+Power\+Ctl}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+set\+Power\+Ctl (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pwr\+Settings\+Value}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_gae1622532a9332006dd5f19a22b98825b}
+Sets the power control settings to power up or down each D\+A\+C \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em pwr\+Settings\+Value} & powers up the selected D\+A\+C(s) Must be the bitwise or of one or more of the following values\+: D\+A\+C\+\_\+\+P\+U\+A, D\+A\+C\+\_\+\+P\+U\+B, D\+A\+C\+\_\+\+P\+U\+C, D\+A\+C\+\_\+\+P\+U\+D Those D\+A\+Cs not included will be cleared. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 280 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga04548e3a1e5b6a200c540b7a4227ec4d}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+set\+Range@{D\+A\+C\+\_\+set\+Range}}
+\index{D\+A\+C\+\_\+set\+Range@{D\+A\+C\+\_\+set\+Range}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+set\+Range}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+set\+Range (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{dac\+Address, }
+\item[{uint32\+\_\+t}]{range\+Value}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga04548e3a1e5b6a200c540b7a4227ec4d}
+Sets the voltage output range value of the given dac \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes.
+\end{DoxyNote}
+Inputs\+: 
+\begin{DoxyParams}{Parameters}
+{\em dac\+Address} & (uint32\+\_\+t)\+: The dac selected to have its range set values\+: D\+A\+C\+\_\+\+A\+D\+D\+\_\+\+A, D\+A\+C\+\_\+\+A\+D\+D\+\_\+\+B, D\+A\+C\+\_\+\+A\+D\+D\+\_\+\+C, D\+A\+C\+\_\+\+A\+D\+D\+\_\+\+A\+L\+L \\
+\hline
+{\em range\+Value} & (uint32\+\_\+t)\+: the output voltage range value to select \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 262 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga4c9d4568cf8efdb66e2ded3e2bde168d}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+set\+Settings\+Ctl@{D\+A\+C\+\_\+set\+Settings\+Ctl}}
+\index{D\+A\+C\+\_\+set\+Settings\+Ctl@{D\+A\+C\+\_\+set\+Settings\+Ctl}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+set\+Settings\+Ctl}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+set\+Settings\+Ctl (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{ctl\+Settings\+Value}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga4c9d4568cf8efdb66e2ded3e2bde168d}
+Sets the D\+A\+C control register settings \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ctl\+Settings\+Value} & sets the selected settings. Must be the bitwise or of one or more of the following values\+: D\+A\+C\+\_\+\+C\+T\+L\+\_\+\+T\+S\+D, D\+A\+C\+\_\+\+C\+T\+L\+\_\+\+C\+L\+A\+M\+P, D\+A\+C\+\_\+\+C\+T\+L\+\_\+\+C\+L\+R\+\_\+\+S\+E\+L Those settings not included will be cleared. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 299 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga95cf8880ebefcfa5a3c877f33a0de56f}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T@{D\+A\+C\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T}}
+\index{D\+A\+C\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T@{D\+A\+C\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+\+S\+S\+I\+Int\+Enable\+E\+O\+T (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{ui32\+Base}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga95cf8880ebefcfa5a3c877f33a0de56f}
+Enables the T\+X end of transmission (E\+O\+T) feature that allows the T\+X\+F\+F interrupt to trigger immediately when a transmission completes The E\+O\+T interrupt triggers the T\+X\+F\+F interrupt This enable is in the C\+R1 register rather than the interrupt mask (I\+M) register
+
+\begin{DoxyNote}{Note}
+Used for E\+K-\/\+T\+M4\+C123\+G\+X\+L 
+\end{DoxyNote}
+
+
+Definition at line 183 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga6042bbafba1e30640f0dbdd9dbe4d6b1}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+update\+Data\+Dig@{D\+A\+C\+\_\+update\+Data\+Dig}}
+\index{D\+A\+C\+\_\+update\+Data\+Dig@{D\+A\+C\+\_\+update\+Data\+Dig}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+update\+Data\+Dig}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+update\+Data\+Dig (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{dac\+Address, }
+\item[{uint32\+\_\+t}]{data}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga6042bbafba1e30640f0dbdd9dbe4d6b1}
+Updates the data in the D\+A\+C's data register The data must be loaded before it will be output \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em dac\+Address} & Selected D\+A\+C(s) \\
+\hline
+{\em data} & Digital output to be placed in the data register of the selected D\+A\+C(s) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 451 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_gae6d7c8f3167d84f60a56a3c1bb6252b7}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+update\+Data\+Volt@{D\+A\+C\+\_\+update\+Data\+Volt}}
+\index{D\+A\+C\+\_\+update\+Data\+Volt@{D\+A\+C\+\_\+update\+Data\+Volt}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+update\+Data\+Volt}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+update\+Data\+Volt (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{dac\+Address, }
+\item[{uint32\+\_\+t}]{range\+Value, }
+\item[{\+\_\+\+Bool}]{bin, }
+\item[{float}]{voltage}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_gae6d7c8f3167d84f60a56a3c1bb6252b7}
+Updates the data in the D\+A\+C's data register to the specified voltage \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes Assumes a Vref = Vrefp-\/\+Vrefn = 2.\+5v The data must be loaded before it will be output
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em dac\+Address} & Selected D\+A\+C(s) \\
+\hline
+{\em range\+Value} & the output voltage range value for the selected D\+A\+Cs \\
+\hline
+{\em bin} & Digital format selection. Selected using pin B\+I\+N/$\sim$2s\+C\+O\+M\+P in hardware Values\+: O\+F\+F\+S\+E\+T\+\_\+\+B\+I\+N\+A\+R\+Y or T\+W\+O\+S\+\_\+\+C\+O\+M\+P\+L\+E\+M\+E\+N\+T \\
+\hline
+{\em voltage} & Voltage to be output on the chosen D\+A\+C(s) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 412 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga5c92c520051e198a9d24f5d14893f506}{\index{A\+D\+C@{A\+D\+C}!D\+A\+C\+\_\+write\+Nop@{D\+A\+C\+\_\+write\+Nop}}
+\index{D\+A\+C\+\_\+write\+Nop@{D\+A\+C\+\_\+write\+Nop}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+C\+\_\+write\+Nop}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+write\+Nop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga5c92c520051e198a9d24f5d14893f506}
+Writes a nop command to the D\+A\+C This function can be used to skip writing to a D\+A\+C in a daisy chain configuration. 
+
+Definition at line 393 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga45f4b52890f9373b7781925529b37f5a}{\index{A\+D\+C@{A\+D\+C}!D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+A\+H@{D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+A\+H}}
+\index{D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+A\+H@{D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+A\+H}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+A\+H}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+A\+H (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga45f4b52890f9373b7781925529b37f5a}
+Clears the output of all 8 D\+A\+Cs by writing to the control registers. \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes. 
+\end{DoxyNote}
+
+
+Definition at line 696 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_gafdc88b1e8452f3717199e9dfbc780992}{\index{A\+D\+C@{A\+D\+C}!D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+E\+H@{D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+E\+H}}
+\index{D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+E\+H@{D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+E\+H}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+E\+H}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+Cd\+\_\+clear\+D\+A\+Cs\+\_\+\+E\+H (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_gafdc88b1e8452f3717199e9dfbc780992}
+Clears the output of all 8 D\+A\+Cs by writing to the control registers. \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes. 
+\end{DoxyNote}
+
+
+Definition at line 706 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga4d051b751ee930dca68513b6c7dec46e}{\index{A\+D\+C@{A\+D\+C}!D\+A\+Cd\+\_\+init\+D\+A\+C@{D\+A\+Cd\+\_\+init\+D\+A\+C}}
+\index{D\+A\+Cd\+\_\+init\+D\+A\+C@{D\+A\+Cd\+\_\+init\+D\+A\+C}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+Cd\+\_\+init\+D\+A\+C}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+Cd\+\_\+init\+D\+A\+C (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{range\+Value, }
+\item[{uint32\+\_\+t}]{pwr\+Settings\+Value, }
+\item[{uint32\+\_\+t}]{Sys\+Clk\+Freq}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga4d051b751ee930dca68513b6c7dec46e}
+Initializes the D\+A\+C in Daisy Chain Operation Sets the output voltage range, turns on the selected D\+A\+Cs and sets the control settings. /note Make sure D\+A\+C\+\_\+\+W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+A\+Y is defined properly
+
+/param Output voltage range of all D\+A\+Cs Sets all D\+A\+C voltage output ranges to -\/5v to +5v turns on D\+A\+C output A and B Turns on thermal shutdown, output current clamp, and turns off S\+D\+O 
+
+Definition at line 596 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_gaa88d6be5a9ccd5ff94b102c1f1a4b464}{\index{A\+D\+C@{A\+D\+C}!D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+A\+H@{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+A\+H}}
+\index{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+A\+H@{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+A\+H}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+A\+H}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+A\+H (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_gaa88d6be5a9ccd5ff94b102c1f1a4b464}
+Loads data into the D\+A\+Cs from the data registers of all 8 D\+A\+Cs \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes. 
+\end{DoxyNote}
+
+
+Definition at line 724 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga5aa63b602b15c7328deb2e562501e8d2}{\index{A\+D\+C@{A\+D\+C}!D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+E\+H@{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+E\+H}}
+\index{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+E\+H@{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+E\+H}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+E\+H}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+Cd\+\_\+load\+D\+A\+Cs\+\_\+\+E\+H (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga5aa63b602b15c7328deb2e562501e8d2}
+Loads data into the D\+A\+Cs from the data registers of D\+A\+Cs E-\/\+H \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes. 
+\end{DoxyNote}
+
+
+Definition at line 715 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga2b2a5da94a4c27b60e1577793bdb970e}{\index{A\+D\+C@{A\+D\+C}!D\+A\+Cd\+\_\+load\+D\+A\+Cs\+Pin\+\_\+\+E\+H@{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+Pin\+\_\+\+E\+H}}
+\index{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+Pin\+\_\+\+E\+H@{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+Pin\+\_\+\+E\+H}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+Cd\+\_\+load\+D\+A\+Cs\+Pin\+\_\+\+E\+H}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+Cd\+\_\+load\+D\+A\+Cs\+Pin\+\_\+\+E\+H (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga2b2a5da94a4c27b60e1577793bdb970e}
+Loads all dacs E-\/\+H with the value currently in their data register by pulling the $\sim$\+L\+D\+A\+C pin low 
+
+Definition at line 733 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga094f43f6aa44b22562d49efe5403c2ca}{\index{A\+D\+C@{A\+D\+C}!D\+A\+Cd\+\_\+set\+Power\+Ctl@{D\+A\+Cd\+\_\+set\+Power\+Ctl}}
+\index{D\+A\+Cd\+\_\+set\+Power\+Ctl@{D\+A\+Cd\+\_\+set\+Power\+Ctl}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+Cd\+\_\+set\+Power\+Ctl}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+Cd\+\_\+set\+Power\+Ctl (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pwr\+Settings\+Value}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga094f43f6aa44b22562d49efe5403c2ca}
+Sets the power control settings to power up or down each D\+A\+C when using Daisy chain operation. \begin{DoxyNote}{Note}
+A delay must be placed between consecutive D\+A\+C write commands. This must be long enough to ensure that $\sim$sync goes high between writes.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em pwr\+Settings\+Value} & powers up the selected D\+A\+C(s) Must be the bitwise or of a stand alone operation parameter and a daisy chain operation parameter\\
+\hline
+\end{DoxyParams}
+Those D\+A\+Cs not included will be cleared. 
+
+Definition at line 676 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga20458db50830182bcf912a60e9df04cd}{\index{A\+D\+C@{A\+D\+C}!D\+A\+Cd\+\_\+set\+Range@{D\+A\+Cd\+\_\+set\+Range}}
+\index{D\+A\+Cd\+\_\+set\+Range@{D\+A\+Cd\+\_\+set\+Range}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+Cd\+\_\+set\+Range}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+Cd\+\_\+set\+Range (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{dac\+Address, }
+\item[{uint32\+\_\+t}]{range\+Value}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga20458db50830182bcf912a60e9df04cd}
+Sets the voltage output range value of the given daisy chained D\+A\+Cs \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes.
+\end{DoxyNote}
+Inputs\+: 
+\begin{DoxyParams}{Parameters}
+{\em dac\+Address} & (uint32\+\_\+t)\+: The dac selected to have its range set \\
+\hline
+{\em range\+Value} & (uint32\+\_\+t)\+: the output voltage range value to select \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 649 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_gac3aeb454aade9dd1def535c072ea78fd}{\index{A\+D\+C@{A\+D\+C}!D\+A\+Cd\+\_\+set\+Settings\+Ctl@{D\+A\+Cd\+\_\+set\+Settings\+Ctl}}
+\index{D\+A\+Cd\+\_\+set\+Settings\+Ctl@{D\+A\+Cd\+\_\+set\+Settings\+Ctl}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+Cd\+\_\+set\+Settings\+Ctl}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+Cd\+\_\+set\+Settings\+Ctl (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{ctl\+Settings\+Value}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_gac3aeb454aade9dd1def535c072ea78fd}
+Sets the D\+A\+C control register settings in daisy chain operation \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ctl\+Settings\+Value} & sets the selected settings for each D\+A\+C. It is the logical or of a value of a normal and a daisy chain operation parameter Must be the bitwise or of one or more of the following values\+: D\+A\+C\+\_\+\+C\+T\+L\+\_\+\+T\+S\+D, D\+A\+C\+\_\+\+C\+T\+L\+\_\+\+C\+L\+A\+M\+P, D\+A\+C\+\_\+\+C\+T\+L\+\_\+\+C\+L\+R\+\_\+\+S\+E\+L, D\+A\+C\+\_\+\+C\+T\+L\+\_\+\+S\+K\+I\+P\+\_\+\+A\+D with the birwise or of one or more of the following values\+: D\+A\+C\+\_\+\+C\+T\+L\+\_\+\+T\+S\+D\+\_\+\+E\+H, D\+A\+C\+\_\+\+C\+T\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+E\+H, D\+A\+C\+\_\+\+C\+T\+L\+\_\+\+C\+L\+R\+\_\+\+S\+E\+L\+\_\+\+E\+H, D\+A\+C\+\_\+\+C\+T\+L\+\_\+\+S\+K\+I\+P\+\_\+\+E\+H\\
+\hline
+\end{DoxyParams}
+Those settings not included will be cleared. 
+
+Definition at line 625 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_ga14aa5f3fc7902cd96eefd32b56b728d4}{\index{A\+D\+C@{A\+D\+C}!D\+A\+Cd\+\_\+update\+Data\+Dig@{D\+A\+Cd\+\_\+update\+Data\+Dig}}
+\index{D\+A\+Cd\+\_\+update\+Data\+Dig@{D\+A\+Cd\+\_\+update\+Data\+Dig}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+Cd\+\_\+update\+Data\+Dig}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+Cd\+\_\+update\+Data\+Dig (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{dac\+Address, }
+\item[{uint32\+\_\+t}]{data\+\_\+\+A\+D, }
+\item[{uint32\+\_\+t}]{data\+\_\+\+E\+H}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_ga14aa5f3fc7902cd96eefd32b56b728d4}
+Updates the data in the D\+A\+C's data register The data must be loaded before it will be output
+
+\begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em dac\+Address} & Selected D\+A\+C(s) Must be the bitwise or of a stand alone operation parameter and a daisy chain operation parameter\\
+\hline
+{\em data\+\_\+\+A\+D} & Digital output to be placed in the data register of the D\+A\+Cs A through D\\
+\hline
+{\em data\+\_\+\+E\+H} & Digital output to be placed in the data register of the D\+A\+Cs E through H (daisy-\/chained device) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 783 of file dac\+\_\+ad5754.\+c.
+
+\hypertarget{group___d_a_c__ad5754_gaa6e1b8d821a10a4ca887a743f2123b3d}{\index{A\+D\+C@{A\+D\+C}!D\+A\+Cd\+\_\+update\+Data\+Volt@{D\+A\+Cd\+\_\+update\+Data\+Volt}}
+\index{D\+A\+Cd\+\_\+update\+Data\+Volt@{D\+A\+Cd\+\_\+update\+Data\+Volt}!A\+D\+C@{A\+D\+C}}
+\subsubsection[{D\+A\+Cd\+\_\+update\+Data\+Volt}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+Cd\+\_\+update\+Data\+Volt (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{dac\+Address, }
+\item[{uint32\+\_\+t}]{range\+Value, }
+\item[{\+\_\+\+Bool}]{bin\+\_\+\+A\+D, }
+\item[{\+\_\+\+Bool}]{bin\+\_\+\+E\+H, }
+\item[{float}]{voltage\+\_\+\+A\+D, }
+\item[{float}]{voltage\+\_\+\+E\+H}
+\end{DoxyParamCaption}
+)}}\label{group___d_a_c__ad5754_gaa6e1b8d821a10a4ca887a743f2123b3d}
+Updates the data in the D\+A\+C's data register to the specified voltage \begin{DoxyNote}{Note}
+A delay must be placed between consecutive dac write commands. This must be long enough to ensure that $\sim$sync goes high between writes Assumes a Vref = Vrefp-\/\+Vrefn = 2.\+5v The data must be loaded before it will be output
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em dac\+Address} & Selected D\+A\+C(s) Must be the bitwise or of a stand alone operation parameter and a daisy chain operation parameter \\
+\hline
+{\em range\+Value} & the output voltage range value for the selected D\+A\+Cs Must be the bitwise or of a stand alone operation parameter and a daisy chain operation parameter \\
+\hline
+{\em bin\+\_\+\+A\+D} & Digital format selection for D\+A\+Cs A-\/\+D. \\
+\hline
+{\em bin\+\_\+\+E\+H} & Digital format selection for D\+A\+Cs E-\/\+H. Selected using pin B\+I\+N/$\sim$2s\+C\+O\+M\+P in hardware Values\+: O\+F\+F\+S\+E\+T\+\_\+\+B\+I\+N\+A\+R\+Y or T\+W\+O\+S\+\_\+\+C\+O\+M\+P\+L\+E\+M\+E\+N\+T \\
+\hline
+{\em voltage\+\_\+\+A\+D} & Voltage to be output on the chosen A-\/\+D D\+A\+C(s) \\
+\hline
+{\em voltage\+\_\+\+E\+H} & Voltage to be output on the chosen E-\/\+H D\+A\+C(s) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 759 of file dac\+\_\+ad5754.\+c.
+
