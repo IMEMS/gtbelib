@@ -645,16 +645,16 @@ void twe_initQSSIuDMAtx(void) {
  * program enters an infinite loop to hold the state.
  **/
 void twe_I2CMasterVerify(uint32_t ui32base, bool burst, bool receive) {
-	while(I2CMasterBusy(ui32Base)) {} // Wait until the transfer is complete
+	while(I2CMasterBusy(ui32base)) {} // Wait until the transfer is complete
 	//uint32_t errorStatus = I2CMasterErr(ui32Base);
-	if(I2CMasterErr(ui32Base) != I2C_MASTER_ERR_NONE) {
+	if(I2CMasterErr(ui32base) != I2C_MASTER_ERR_NONE) {
 
 		// An error has occured
 		if(burst && !receive) {
-			I2CMasterControl(ui32Base, I2C_MASTER_CMD_BURST_SEND_ERROR_STOP);
+			I2CMasterControl(ui32base, I2C_MASTER_CMD_BURST_SEND_ERROR_STOP);
 		}
 		else if(burst && !receive) {
-			I2CMasterControl(ui32Base, I2C_MASTER_CMD_BURST_RECEIVE_ERROR_STOP);
+			I2CMasterControl(ui32base, I2C_MASTER_CMD_BURST_RECEIVE_ERROR_STOP);
 		}
 
 		while(1) {} // Capture state
