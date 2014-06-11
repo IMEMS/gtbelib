@@ -144,7 +144,8 @@ extern "C"
  * Serial Port Settings *
  ************************/
 //#define DAC_FREQ_SSI_DATA 10000000 // Can be Read by logic 8
-#define DAC_FREQ_SSI_DATA 30000000
+#define DAC_FREQ_SSI_DATA 5000000 // Can be Read by logic 8
+//#define DAC_FREQ_SSI_DATA 30000000
 // Delay required after each DAC write before the next can be written.
 // Must be sufficient to ensure that the ~SYNC goes high between writes.
 #define DAC_WRITE_DELAY 5000*(100000/FREQ_SSI0_DATA)
@@ -181,7 +182,7 @@ extern "C"
 #define DAC_ADDR_C        0x00000002 // DAC C Address
 #define DAC_ADDR_D        0x00000003 // DAC D Address
 #define DAC_ADDR_ALL_AD   0x00000004 // Address all 4 DACs A through D
-#define DAC_ADDR_NONE_AD  0x00000010 // Address all 4 DACs E through H
+#define DAC_ADDR_NONE_AD  0x00000010 // Address no DACs A through D
 // DAC Registers
 #define DAC_REG_DATA	  0x00000000 // DAC data register
 #define DAC_REG_RANGE	  0x00000001 // DAC output voltage range register
@@ -231,8 +232,8 @@ extern "C"
 #define DAC_ADDR_G         0x00000200 // DAC G Address
 #define DAC_ADDR_H         0x00000300 // DAC H Address
 #define DAC_ADDR_ALL_EH    0x00000400 // Address all 4 DACs E through H
-#define DAC_ADDR_ALL_AH    0x00000404 // Address all 4 DACs E through H
-#define DAC_ADDR_NONE_EH   0x00001000 // Address all 4 DACs E through H
+#define DAC_ADDR_ALL_AH    0x00000404 // Address all 8 DACs A through H
+#define DAC_ADDR_NONE_EH   0x00001000 // Address no DACs E through H
 
 // DAC Control Settings
 #define DAC_CTL_TSD_EH	   0x00000800 // Thermal Shutdown enable
