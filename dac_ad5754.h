@@ -14,8 +14,8 @@
  *  Originally written for the MRIG uHRG gyroscope project
  *
  *    INPUTS
- *     ~LDAC_Forcer
- *     ~LDAC_Quad
+ *     ~LDAC_AD
+ *     ~LDAC_EH
  *     ~CLR
  *	   SERIAL (SPI)
  *     SCLK
@@ -76,14 +76,14 @@ extern "C"
 	#define DAC_SSI_INT_TYPE			SSI_TXFF
 	#define DAC_SSI_TX_UDMA_CHANNEL 	UDMA_CHANNEL_SSI0TX
 
-	// ~LDAC_FORCER and ~LDAC_Quad
+	// ~LDAC_AD and ~LDAC_EH
 	#define DAC_LDAC_GPIO_PERIPH 		SYSCTL_PERIPH_GPIOE
 	#define DAC_LDAC_GPIO_BASE 			GPIO_PORTE_AHB_BASE
-	#define DAC_LDAC_FORCER_PIN 		GPIO_PIN_1
-	#define DAC_LDAC_QUAD_PIN 			GPIO_PIN_2
+	#define DAC_LDAC_AD_PIN 		GPIO_PIN_1
+	#define DAC_LDAC_EH_PIN 			GPIO_PIN_2
 	// LDAC Timer Not available on this MCU
 	#define DAC_LDAC_TIMER_BASE			TIMER2_BASE // Not available on this MCU
-	#define DAC_LDAC_FORCER_TIMER		TIMER_A
+	#define DAC_LDAC_AD_TIMER		TIMER_A
 
 	//
 
@@ -113,19 +113,19 @@ extern "C"
 	#define DAC_SSI_TX_UDMA_CHANNEL 	15
 	#define DAC_SSI_TX_UDMA_CHANNEL_SELECTION	UDMA_CH15_SSI3TX
 
-	// ~LDAC_FORCER and ~LDAC_Quad
+	// ~LDAC_AD and ~LDAC_EH
 	#define DAC_LDAC_GPIO_PERIPH 			SYSCTL_PERIPH_GPIOM
 	#define DAC_LDAC_GPIO_BASE 				GPIO_PORTM_BASE
-	#define DAC_LDAC_FORCER_PIN 			GPIO_PIN_1
-	#define DAC_LDAC_FORCER_PIN_CONFIG		GPIO_PM1_T2CCP1
-	#define DAC_LDAC_FORCER_TIMER_PERIPH	SYSCTL_PERIPH_TIMER2
-	#define DAC_LDAC_FORCER_TIMER_BASE		TIMER2_BASE
-	#define DAC_LDAC_FORCER_TIMER			TIMER_B
-	#define DAC_LDAC_QUAD_PIN 				GPIO_PIN_2
-	#define DAC_LDAC_QUAD_PIN_CONFIG		GPIO_PM2_T3CCP0
-	#define DAC_LDAC_QUAD_TIMER_PERIPH		SYSCTL_PERIPH_TIMER3
-	#define DAC_LDAC_QUAD_TIMER_BASE		TIMER3_BASE
-	#define DAC_LDAC_QUAD_TIMER				TIMER_A
+	#define DAC_LDAC_AD_PIN 			GPIO_PIN_1
+	#define DAC_LDAC_AD_PIN_CONFIG		GPIO_PM1_T2CCP1
+	#define DAC_LDAC_AD_TIMER_PERIPH	SYSCTL_PERIPH_TIMER2
+	#define DAC_LDAC_AD_TIMER_BASE		TIMER2_BASE
+	#define DAC_LDAC_AD_TIMER			TIMER_B
+	#define DAC_LDAC_EH_PIN 				GPIO_PIN_2
+	#define DAC_LDAC_EH_PIN_CONFIG		GPIO_PM2_T3CCP0
+	#define DAC_LDAC_EH_TIMER_PERIPH		SYSCTL_PERIPH_TIMER3
+	#define DAC_LDAC_EH_TIMER_BASE		TIMER3_BASE
+	#define DAC_LDAC_EH_TIMER				TIMER_A
 	// ~CLR
 	#define DAC_CLR_GPIO_PERIPH 			SYSCTL_PERIPH_GPIOM
 	#define DAC_CLR_GPIO_BASE 				GPIO_PORTM_BASE
@@ -290,7 +290,7 @@ extern void DAC_clearDACsPin(void);
 extern void DAC_loadDACs(void);
 extern void DAC_loadDACsPin(void);
 extern void DAC_loadDACsPinTimer(void);
-extern void DAC_initTimersLDAC(bool enForcer, bool enQuad, uint32_t pulseWidth);
+extern void DAC_initTimersLDAC(bool enAD, bool enEH, uint32_t pulseWidth);
 extern void DAC_writeNop(void);
 extern void DAC_updateDataVolt(uint32_t dacAddress, uint32_t rangeValue, _Bool BIN, float voltage);
 extern void DAC_updateDataDig(uint32_t dacAddress, uint32_t data);

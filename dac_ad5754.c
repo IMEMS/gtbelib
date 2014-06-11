@@ -14,8 +14,8 @@
  *  Originally written for the MRIG uHRG gyroscope project
  *
  *    INPUTS
- *     ~LDAC_Forcer
- *     ~LDAC_Quad
+ *     ~LDAC_AD
+ *     ~LDAC_EH
  *     ~CLR
  *	   SERIAL (SPI)
  *     SCLK
@@ -121,7 +121,7 @@ _SSIBaseValid(uint32_t ui32Base)
 	 DAC_initCtlLDAC();
 	 DAC_initCtlCLR();
 	 // Initialize active low controls to output high
-	 MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_FORCER_PIN|DAC_LDAC_QUAD_PIN|DAC_CLR_PIN, DAC_LDAC_FORCER_PIN|DAC_LDAC_QUAD_PIN|DAC_CLR_PIN);
+	 MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_AD_PIN|DAC_LDAC_EH_PIN|DAC_CLR_PIN, DAC_LDAC_AD_PIN|DAC_LDAC_EH_PIN|DAC_CLR_PIN);
 	 DAC_setSettingsCtl(DAC_CTL_TSD | DAC_CTL_CLAMP | DAC_CTL_SDO_DIS);
 	 MAP_SysCtlDelay(4000);
 	 DAC_setRange(DAC_ADDR_ALL_AD, rangeValue);
@@ -197,10 +197,12 @@ _SSIBaseValid(uint32_t ui32Base)
 	  //SSIIntClear(DAC_SSI_BASE, DAC_SSI_INT_TYPE)
 	  HWREG(DAC_SSI_BASE + SSI_O_ICR) = DAC_SSI_INT_TYPE;
 	  //MAP_GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1, 0x00);
-	  HWREG(DAC_LDAC_GPIO_BASE + GPIO_O_DATA + (DAC_LDAC_QUAD_PIN <<2)) = 0x00; // Write low to GPIO PC7
+	  HWREG(DAC_LDAC_GPIO_BASE + GPIO_O_DATA + (DAC_LDAC_AD_PIN <<2)) = 0x00; // Write low to GPIO PC7
+	  HWREG(DAC_LDAC_GPIO_BASE + GPIO_O_DATA + (DAC_LDAC_EH_PIN <<2)) = 0x00; // Write low to GPIO PC7
 	  MAP_SysCtlDelay(1);
 	  //MAP_GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1, 0x02);
-	  HWREG(DAC_LDAC_GPIO_BASE + GPIO_O_DATA + (DAC_LDAC_QUAD_PIN <<2)) = DAC_LDAC_FORCER_PIN; // Write high to GPIO PC7
+	  HWREG(DAC_LDAC_GPIO_BASE + GPIO_O_DATA + (DAC_LDAC_AD_PIN <<2)) = DAC_LDAC_AD_PIN; // Write high to GPIO PC7
+	  HWREG(DAC_LDAC_GPIO_BASE + GPIO_O_DATA + (DAC_LDAC_EH_PIN <<2)) = DAC_LDAC_AD_PIN; // Write high to GPIO PC7
   }
 
   /**
@@ -210,9 +212,9 @@ _SSIBaseValid(uint32_t ui32Base)
   void DAC_intHandlerSSItimer(void) {
 	  //SSIIntClear(DAC_SSI_BASE, DAC_SSI_INT_TYPE)
 	  HWREG(DAC_SSI_BASE + SSI_O_ICR) = DAC_SSI_INT_TYPE;
-	  MAP_TimerLoadSet(DAC_LDAC_FORCER_TIMER_BASE, DAC_LDAC_FORCER_TIMER, 50);
-	  //TimerEnable(DAC_LDAC_FORCER_TIMER_BASE, DAC_LDAC_FORCER_TIMER);
-	  HWREG(DAC_LDAC_FORCER_TIMER_BASE + TIMER_O_CTL) |= DAC_LDAC_FORCER_TIMER & (TIMER_CTL_TAEN | TIMER_CTL_TBEN);
+	  MAP_TimerLoadSet(DAC_LDAC_AD_TIMER_BASE, DAC_LDAC_AD_TIMER, 50);
+	  //TimerEnable(DAC_LDAC_AD_TIMER_BASE, DAC_LDAC_AD_TIMER);
+	  HWREG(DAC_LDAC_AD_TIMER_BASE + TIMER_O_CTL) |= DAC_LDAC_AD_TIMER & (TIMER_CTL_TAEN | TIMER_CTL_TBEN);
   }
 
 
@@ -229,13 +231,13 @@ _SSIBaseValid(uint32_t ui32Base)
 
 /**
  * Initialize LDAC Controls
- *  initializes: ~LDAC_FORCER, ~LDAC_Quad
- *  \note sets ~LDAC_FORCER and ~LDAC_Quad
+ *  initializes: ~LDAC_AD, ~LDAC_EH
+ *  \note sets ~LDAC_AD and ~LDAC_EH
  **/
  void DAC_initCtlLDAC(void) {
 	 MAP_SysCtlPeripheralEnable(DAC_LDAC_GPIO_PERIPH);
-	 MAP_GPIOPinTypeGPIOOutput(DAC_LDAC_GPIO_BASE, DAC_LDAC_QUAD_PIN | DAC_LDAC_FORCER_PIN);
-	 MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_QUAD_PIN | DAC_LDAC_FORCER_PIN, DAC_LDAC_QUAD_PIN | DAC_LDAC_FORCER_PIN); // Initialize active low control to output high
+	 MAP_GPIOPinTypeGPIOOutput(DAC_LDAC_GPIO_BASE, DAC_LDAC_EH_PIN | DAC_LDAC_AD_PIN);
+	 MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_EH_PIN | DAC_LDAC_AD_PIN, DAC_LDAC_EH_PIN | DAC_LDAC_AD_PIN); // Initialize active low control to output high
  }
 
 /**
@@ -342,47 +344,47 @@ void DAC_initCtlCLR(void) {
  **/
  void DAC_loadDACsPin(void) {
 	 //MAP_SysCtlDelay(5);
-	 MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_FORCER_PIN, 0x00);
+	 MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_AD_PIN, 0x00);
 	 //MAP_SysCtlDelay(5);
-	 MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_FORCER_PIN, 0x02);
+	 MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_AD_PIN, 0x02);
  }
 
  /**
   * Loads all 4 dacs with the value currently in their data register by
-  * pulling the ~LDAC_FORCER pin low
+  * pulling the ~LDAC_AD pin low
   *
-  * \note Uses the timer in one shot mode to pulse ~LDAC_FORCER low
+  * \note Uses the timer in one shot mode to pulse ~LDAC_AD low
   **/
   void DAC_loadDACsPinTimer(void) {
-	  MAP_TimerEnable(DAC_LDAC_FORCER_TIMER_BASE, DAC_LDAC_FORCER_TIMER);
+	  MAP_TimerEnable(DAC_LDAC_AD_TIMER_BASE, DAC_LDAC_AD_TIMER);
   }
 
 /**
  * Initializes Timers for one shot operation of the LDAC pulse
  *
- * \param enForcer - enables the LDAC_FORCER timer
- * \param enQuad - enables the LDAC_QUAD timer
+ * \param enAD - enables the LDAC_AD timer
+ * \param enEH - enables the LDAC_EH timer
  * \param pulseWidth - Number of clock cycles to pulse the LDAC signal low.
  *
  * \note Not available on the GTBE-TM4C123GXL
  **/
-void DAC_initTimersLDAC(bool enForcer, bool enQuad, uint32_t pulseWidth) {
-	// LDAC_FORCER Timer
+void DAC_initTimersLDAC(bool enAD, bool enEH, uint32_t pulseWidth) {
+	// LDAC_AD Timer
 	MAP_SysCtlPeripheralEnable(DAC_LDAC_GPIO_PERIPH);
-	if(enForcer) {
-		MAP_GPIOPinTypeTimer(DAC_LDAC_GPIO_BASE, DAC_LDAC_FORCER_PIN);
-		MAP_GPIOPinConfigure(DAC_LDAC_FORCER_PIN_CONFIG);
-		MAP_SysCtlPeripheralEnable(DAC_LDAC_FORCER_TIMER_PERIPH);
-		MAP_TimerConfigure(DAC_LDAC_FORCER_TIMER_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_B_ONE_SHOT | TIMER_CFG_B_ACT_CLRSETTO);
-		MAP_TimerLoadSet(DAC_LDAC_FORCER_TIMER_BASE, DAC_LDAC_FORCER_TIMER, pulseWidth);
+	if(enAD) {
+		MAP_GPIOPinTypeTimer(DAC_LDAC_GPIO_BASE, DAC_LDAC_AD_PIN);
+		MAP_GPIOPinConfigure(DAC_LDAC_AD_PIN_CONFIG);
+		MAP_SysCtlPeripheralEnable(DAC_LDAC_AD_TIMER_PERIPH);
+		MAP_TimerConfigure(DAC_LDAC_AD_TIMER_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_B_ONE_SHOT | TIMER_CFG_B_ACT_CLRSETTO);
+		MAP_TimerLoadSet(DAC_LDAC_AD_TIMER_BASE, DAC_LDAC_AD_TIMER, pulseWidth);
 	}
-	// LDAC_QUAD Timer
-	if(enQuad) {
-		MAP_GPIOPinTypeTimer(DAC_LDAC_GPIO_BASE, DAC_LDAC_QUAD_PIN);
-		MAP_GPIOPinConfigure(DAC_LDAC_QUAD_PIN_CONFIG);
-		MAP_SysCtlPeripheralEnable(DAC_LDAC_QUAD_TIMER_PERIPH);
-		MAP_TimerConfigure(DAC_LDAC_QUAD_TIMER_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_ONE_SHOT | TIMER_CFG_A_ACT_CLRSETTO);
-		MAP_TimerLoadSet(DAC_LDAC_QUAD_TIMER_BASE, pulseWidth, TIMER_A);
+	// LDAC_EH Timer
+	if(enEH) {
+		MAP_GPIOPinTypeTimer(DAC_LDAC_GPIO_BASE, DAC_LDAC_EH_PIN);
+		MAP_GPIOPinConfigure(DAC_LDAC_EH_PIN_CONFIG);
+		MAP_SysCtlPeripheralEnable(DAC_LDAC_EH_TIMER_PERIPH);
+		MAP_TimerConfigure(DAC_LDAC_EH_TIMER_BASE, TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_ONE_SHOT | TIMER_CFG_A_ACT_CLRSETTO);
+		MAP_TimerLoadSet(DAC_LDAC_EH_TIMER_BASE, pulseWidth, TIMER_A);
 	}
 }
 
@@ -598,7 +600,7 @@ void DAC_uDMAsw_ISR(void) {
  	DAC_initCtlLDAC();
  	DAC_initCtlCLR();
  	 // Initialize active low controls to output high
- 	MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_FORCER_PIN|DAC_LDAC_QUAD_PIN|DAC_CLR_PIN, DAC_LDAC_FORCER_PIN|DAC_LDAC_QUAD_PIN|DAC_CLR_PIN); // Initialize active low controls to output high
+ 	MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_AD_PIN|DAC_LDAC_EH_PIN|DAC_CLR_PIN, DAC_LDAC_AD_PIN|DAC_LDAC_EH_PIN|DAC_CLR_PIN); // Initialize active low controls to output high
  	 DACd_setSettingsCtl((DAC_CTL_TSD | DAC_CTL_CLAMP) |
  			 	 	 	 (DAC_CTL_TSD_EH | DAC_CTL_CLAMP_EH | DAC_CTL_SDO_DIS_EH));
  	 MAP_SysCtlDelay(4000);
@@ -732,9 +734,9 @@ void DAC_uDMAsw_ISR(void) {
   **/
  void DACd_loadDACsPin_EH(void) {
 	MAP_SysCtlDelay(4);
-	MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_QUAD_PIN, 0x00);
+	MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_EH_PIN, 0x00);
 	MAP_SysCtlDelay(1);
-	MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_QUAD_PIN, DAC_LDAC_QUAD_PIN);
+	MAP_GPIOPinWrite(DAC_LDAC_GPIO_BASE, DAC_LDAC_EH_PIN, DAC_LDAC_EH_PIN);
  }
 /**
  * Updates the data in the DAC's data register to the specified voltage
